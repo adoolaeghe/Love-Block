@@ -1,0 +1,21 @@
+{
+  "contract_name": "LoveBlock",
+  "abi": [
+    {
+      "inputs": [],
+      "payable": false,
+      "type": "constructor"
+    }
+  ],
+  "unlinked_binary": "0x60606040523415600e57600080fd5b5b5b5b603680601e6000396000f30060606040525b600080fd00a165627a7a723058205776f130748f4f8e375b9c7a17d1fd5e1caf03805d1a301401e6839dc07f87b90029",
+  "networks": {
+    "1505142046354": {
+      "events": {},
+      "links": {},
+      "address": "0x4fea75eb00f5473551e6610f0947ac4b7213d90e",
+      "updated_at": 1505142088249
+    }
+  },
+  "schema_version": "0.0.5",
+  "updated_at": 1505142088249
+}
