@@ -1,0 +1,53 @@
+{
+  "contract_name": "Marriage",
+  "abi": [
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "couple",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "marry",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "personAddress",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    }
+  ],
+  "unlinked_binary": "0x6060604052341561000f57600080fd5b5b6101798061001f6000396000f300606060405263ffffffff7c01000000000000000000000000000000000000000000000000000000006000350416631afd0f9d811461005357806385b9a11f146100855780638c392649146100b4575b600080fd5b341561005e57600080fd5b6100696004356100e3565b604051600160a060020a03909116815260200160405180910390f35b341561009057600080fd5b61006961010a565b604051600160a060020a03909116815260200160405180910390f35b34156100bf57600080fd5b61006961013e565b604051600160a060020a03909116815260200160405180910390f35b600081600281106100f057fe5b0160005b915054906101000a9004600160a060020a031681565b6002805473ffffffffffffffffffffffffffffffffffffffff191633600160a060020a039081169190911791829055165b90565b600254600160a060020a0316815600a165627a7a72305820306c50d554c1270091a1ebcf7452742407a5247318fd0b90b2e363a9d5cd340f0029",
+  "networks": {},
+  "schema_version": "0.0.5",
+  "updated_at": 1505226914671
+}

@@ -1,5 +1,5 @@
-var LoveBlock = artifacts.require("./LoveBlock.sol");
+var Marriage = artifacts.require("./Marriage.sol");
 
 module.exports = function(deployer) {
-  deployer.deploy(LoveBlock);
+  deployer.deploy(Marriage);
 };
