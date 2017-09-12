@@ -15,4 +15,10 @@ contract TestMarriage {
     myEvent1(returnAddress,"Return address");
     Assert.equal(returnAddress, expectedAddress, "Contract returns callers address");
   }
+
+  function testGetUserByAddress() {
+    address expected = this;
+    address user = marriage.couple(0);
+    Assert.equal(user, expected, "User address should be saved to couple array");
+  }
 }

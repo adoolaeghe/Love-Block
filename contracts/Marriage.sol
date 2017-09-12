@@ -6,6 +6,11 @@ contract Marriage {
 
   function marry() public returns (address) {
     personAddress = msg.sender;
+    couple[0] = personAddress;
     return personAddress;
+  }
+
+  function getCouple() public returns (address[2]) {
+    return couple;
   }
 }
