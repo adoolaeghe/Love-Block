@@ -8,6 +8,11 @@ contract TestMarriage {
   Marriage marriage = Marriage(DeployedAddresses.Marriage());
   event myEvent1(address _sender, string _msg);
 
+  function testContractStatusUponCreation() {
+    bool expectedStatus = marriage.complete();
+    Assert.equal(expectedStatus, false, "Contract is imcomplete upon instantiation");
+  }
+
   function testCallReturnsUserAddress() {
     address returnAddress = marriage.marry();
     address expectedAddress = this;
@@ -21,4 +26,6 @@ contract TestMarriage {
     address user = marriage.couple(0);
     Assert.equal(user, expected, "User address should be saved to couple array");
   }
+
+
 }
