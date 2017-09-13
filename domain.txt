@@ -1,12 +1,14 @@
+DATA STRUCTURE
 
 // Define person:
 struct Person {
+  Address _address;
   String firstName;
   String middleName;
   String familyName;
   DateTime dateOfBirth;
   String placeOfBirth;
-  Uint32 id
+  Uint id
 }
 
 // Define marriage:
@@ -19,3 +21,11 @@ struct Marriage {
 
 // How we store marriages?
 mapping (??? => Marriage) public marriages;
+
+
+QUESTIONS
+
+Shall we store data on SWARM?
+http://swarm-gateways.net/bzz:/theswarm.eth/#code-and-status
+http://swarm-guide.readthedocs.io/en/latest/
+http://swarm-guide.readthedocs.io/en/latest/simpleuser.html
