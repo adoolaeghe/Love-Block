@@ -21,11 +21,23 @@ contract TestMarriage {
     Assert.equal(returnAddress, expectedAddress, "Contract returns callers address");
   }
 
-  function testGetUserByAddress() {
+  function testGetFirstUserByAddress() {
     address expected = this;
     address user = marriage.couple(0);
-    Assert.equal(user, expected, "User address should be saved to couple array");
+    Assert.equal(user, expected, "a first user can be added to a marriage");
   }
 
+  function testGetSecondUserByAddress() {
+    address secondUserAddress = marriage.marry();
+    address expected = this;
+    address user = marriage.couple(1);
+    Assert.equal(user, expected, "a second user can be added to a marriage");
+  }
 
+  function testOnlyTwoPersonCanBeMarried() {
+    uint size1 = marriage.getCouple().length;
+    address thirdUserAddress = marriage.marry();
+    uint size2 = marriage.getCouple().length;
+    Assert.equal(size1, size2, "Only two users can get married");
+  }
 }
