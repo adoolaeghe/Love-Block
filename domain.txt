@@ -1,0 +1,21 @@
+
+// Define person:
+struct Person {
+  String firstName;
+  String middleName;
+  String familyName;
+  DateTime dateOfBirth;
+  String placeOfBirth;
+  Uint32 id
+}
+
+// Define marriage:
+struct Marriage {
+  Person partner1;
+  Person partner2;
+  String agreement;
+  DateTime timestamp
+}
+
+// How we store marriages?
+mapping (??? => Marriage) public marriages;
