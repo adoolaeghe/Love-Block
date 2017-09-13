@@ -26,6 +26,7 @@ mapping (??? => Marriage) public marriages;
 QUESTIONS
 
 Shall we store data on SWARM?
+— probably not. Swarm is for files.
 http://swarm-gateways.net/bzz:/theswarm.eth/#code-and-status
 http://swarm-guide.readthedocs.io/en/latest/
 http://swarm-guide.readthedocs.io/en/latest/simpleuser.html
