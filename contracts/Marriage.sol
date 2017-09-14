@@ -5,6 +5,7 @@ contract Marriage {
   address[2] public couple;
   address public personAddress;
   string public errorString = 'this person is not available';
+  mapping (uint => string) public testMapping;
 
   function marry() public returns (address) {
     personAddress = msg.sender;
@@ -21,6 +22,7 @@ contract Marriage {
   }
 
   function getCouple() public returns (address[2]) {
+    testMapping[0] = 'Hi there!';
     return couple;
   }
 

@@ -1,0 +1,15 @@
+{
+  "contract_name": "Marriages",
+  "abi": [],
+  "unlinked_binary": "0x60606040523415600e57600080fd5b5b603680601c6000396000f30060606040525b600080fd00a165627a7a723058204a87b8798bab1f025030da447ef71963c5d6f6932db083deedc01a7602934cc50029",
+  "networks": {
+    "1505211200541": {
+      "events": {},
+      "links": {},
+      "address": "0x0f4e52427774230ed143423bd25d254b65ed2704",
+      "updated_at": 1505386670443
+    }
+  },
+  "schema_version": "0.0.5",
+  "updated_at": 1505386670443
+}

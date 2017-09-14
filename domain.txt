@@ -22,11 +22,23 @@ struct Marriage {
 // How we store marriages?
 mapping (??? => Marriage) public marriages;
 
+// How we check if a person already married?
+// We make a relations table:
+
+mapping (Address => ???) public marriageRecords;
+
+
+///
+marriages(0x123456) == <marriage> ([0x234, 0x890]) =>
+
+marriageRecords(0x234) => 0x123456
+marriageRecords(0x890) => 0x123456
+
 
 QUESTIONS
 
 Shall we store data on SWARM?
-— probably not. Swarm is for files.
+— probably not. It looks like Swarm is for files.
 http://swarm-gateways.net/bzz:/theswarm.eth/#code-and-status
 http://swarm-guide.readthedocs.io/en/latest/
 http://swarm-guide.readthedocs.io/en/latest/simpleuser.html
