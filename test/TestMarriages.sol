@@ -8,14 +8,13 @@ contract TestMarriages {
   Marriages marriages = Marriages(DeployedAddresses.Marriages());
 
   function testContractAcceptsNewPerson() {
-    address personAddress = msg.sender;
-    string firstName = 'John';
-    string middleName = 'Spencer';
-    string familyName = 'Smith';
-    string dateOfBirth = '19.02.1907';
-    string placeOfBirth = 'Edinbourgh';
-    int id = 1287163912837;
-    bool expectedStatus = marriages.addPerson(personAddress, firstName, middleName, familyName, dateOfBirth, placeOfBirth, id);
-    Assert.equal(expectedStatus, true, 'Contract accepts a new person.');
+    bytes32 firstName = "John";
+    bytes32 middleName = "Spencer";
+    bytes32 familyName = "Smith";
+    bytes32 dateOfBirth = "19.02.1907";
+    bytes32 placeOfBirth = "Edinbourgh";
+    uint id = 1287163912837;
+    bool expectedStatus = marriages.addPerson(firstName, middleName, familyName, dateOfBirth, placeOfBirth, id);
+    Assert.equal(expectedStatus, true, "Contract accepts a new person.");
   }
 }
