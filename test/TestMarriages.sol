@@ -20,14 +20,15 @@ contract TestMarriages {
 
   function testContractStoresNewPerson() {
     var (returnedAddress,
-          returndFirstName,
+          returnedFirstName,
           returnedMiddleName,
           returnedFamilyname,
           returnedDateOfBirth,
           returnedPlaceOfBirth,
           returnedId) = marriages.getPerson(0);
+
     Assert.equal(returnedAddress, this, "Contract stores a new person address.");
-    Assert.equal(returndFirstName, firstName, "Contract stores a new person first name.");
+    Assert.equal(returnedFirstName, firstName, "Contract stores a new person first name.");
     Assert.equal(returnedMiddleName, middleName, "Contract stores a new person middle name.");
     Assert.equal(returnedFamilyname, familyName, "Contract stores a new person family name.");
     Assert.equal(returnedDateOfBirth, dateOfBirth, "Contract stores a new person date of birth.");
