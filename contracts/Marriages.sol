@@ -26,4 +26,13 @@ contract Marriages {
     return true;
   }
 
+  function getPerson(uint256 _index) public returns (address, bytes32, bytes32, bytes32, bytes32, bytes32, uint) {
+    return (people[_index]._address,
+            people[_index].firstName,
+            people[_index].middleName,
+            people[_index].familyName,
+            people[_index].dateOfBirth,
+            people[_index].placeOfBirth,
+            people[_index].id);
+  }
 }

@@ -132,8 +132,8 @@
     "1505211200541": {
       "events": {},
       "links": {},
-      "address": "0x7bb04fc9ae792daf4f667719a6a276925d3ba1cb",
-      "updated_at": 1505386670441
+      "address": "0x15777f397b0d19cbec324c13c21e22ba97e17981",
+      "updated_at": 1505391680908
     },
     "1505383095474": {
       "events": {},
@@ -143,5 +143,5 @@
     }
   },
   "schema_version": "0.0.5",
-  "updated_at": 1505388437356
+  "updated_at": 1505391680908
 }
