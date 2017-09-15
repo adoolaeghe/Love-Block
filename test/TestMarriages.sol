@@ -6,6 +6,16 @@ import "../contracts/Marriages.sol";
 
 contract TestMarriages {
   Marriages marriages = Marriages(DeployedAddresses.Marriages());
+
+  function testContractAllowsMakingProposals() {
+    address testPartnerAddress = 0x382eb6006b568c141c1e1af1daf637bce2eb0ec5;
+    uint32 testReturn = 0;
+    Assert.notEqual(marriages.proposalNew(testPartnerAddress), testPartnerAddress, "Test contract allows making proposals.");
+  }
+}
+
+/*contract TestMarriages {
+  Marriages marriages = Marriages(DeployedAddresses.Marriages());
   bytes32 firstName = "John";
   bytes32 middleName = "Spencer";
   bytes32 familyName = "Smith";
@@ -35,4 +45,4 @@ contract TestMarriages {
     Assert.equal(returnedPlaceOfBirth, placeOfBirth, "Contract stores a new person place of birth.");
     Assert.equal(returnedId, id, "Contract stores a new person id number.");
   }
-}
+}*/

@@ -2,7 +2,7 @@ pragma solidity ^0.4.4;
 
 contract Marriages {
 
-  struct Person {
+  /*struct Person {
     address _address;
     bytes32 firstName;
     bytes32 middleName;
@@ -10,9 +10,9 @@ contract Marriages {
     bytes32 dateOfBirth;
     bytes32 placeOfBirth;
     uint id;
-  }
+  }*/
 
-  Person[] public people;
+  /*Person[] public people;
 
   function addPerson(bytes32 _firstName, bytes32 _middleName, bytes32 _familyName, bytes32 _dateOfBirth, bytes32 _placeOfBirth, uint _id) public returns (bool) {
     people.length++;
@@ -34,5 +34,5 @@ contract Marriages {
             people[_index].dateOfBirth,
             people[_index].placeOfBirth,
             people[_index].id);
-  }
+  }*/
 }

@@ -1,4 +1,36 @@
-HOW WE CREATE MARRIAGES?
+HOW PROPOSALS ARE HANDLED?
+
+  johnAddress = 0x001
+  maryAddress = 0x002
+
+  // How they start a blockchain marriage?
+  John: proposalNew(maryAddress)     =>  (check: proposalRecords(maryAddress) == johnAddress ? marriageCreate(maryAddress) : proposalCreate(maryAddress))
+  Mary: proposalNew(johnAddress)     =>  (check: proposalRecords(johnAddress) == maryAddress ? marriageCreate(johnAddress) : proposalCreate(johnAddress))
+
+  // What are proposal records?
+  mapping (address => address) public proposalRecords;
+
+  function proposalCreate(address _address) public returns(bool) {
+    proposalRecords[msg.sender] = _address;
+    return true;
+  }
+
+  function marriageCreate(address _address) public returns(bool) {
+    // Create an empty marriage object
+    marriages.new()                                   => marId  (adds empty marriage to marriages array)
+
+    // Populate it with data
+    marriages.addPerson(marId, <person params>)       => true   (adds person to the people array)
+    marriages.addPerson(marId, <person params>)       => true   (adds person to the people array)
+    marriages.addAgreement(marId, <agreement params>) => true   (adds agreement to marriage)
+
+    // Set complete
+    marriages.setComplete(marId)                      => marId  (adds timestamp, sets marriage.complete = true, adds people's addresses to marriageRecords)
+  }
+
+
+
+HOW MARRIAGES ARE CREATED?
 
   marriages.new()                                   => marId  (adds empty marriage to marriages array)
   marriages.addPerson(marId, <person params>)       => true   (adds person to the people array)
