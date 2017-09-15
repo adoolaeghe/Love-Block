@@ -11,12 +11,13 @@ contract TestMarriages {
 
 
   function testContractAllowsMakingProposals() {
+    showAddress(this, "Current contract address");
+    showAddress(msg.sender, "Msg.sender");
     uint32 testReturn = 0;
     Assert.notEqual(marriages.proposalNew(testPartnerAddress), testPartnerAddress, "Test contract allows making proposals.");
   }
 
   function testContractStoresProposal() {
-    showAddress(marriages.proposals(this), "Proposals retirn");
     Assert.equal(marriages.proposals(this), testPartnerAddress, "Test contract stores proposal.");
   }
 }

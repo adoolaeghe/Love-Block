@@ -4,7 +4,11 @@ contract Marriages {
   mapping (address => address) public proposals;
 
   function proposalNew(address personAddress) returns (uint32) {
-    proposals[msg.sender] = personAddress;
+    if(proposals[personAddress] == msg.sender) {
+      // start marrige...
+    } else {
+      proposals[msg.sender] = personAddress;
+    }
   }
 
   /*struct Person {
