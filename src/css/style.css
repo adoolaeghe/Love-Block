@@ -1,0 +1,32 @@
+body {
+  text-align: center;
+  margin: 0px;
+
+}
+
+div.nav-container {
+  display: flex;
+  height: 100px;
+  background-color: grey;
+  justify-content: center;
+}
+
+h1 {
+  color: white;
+}
+
+.article1-container, .article2-container {
+  height: 400px;
+}
+
+.article1-container {
+  background-color: lightpink
+}
+
+.article2-container {
+  background-color: lightgrey
+}
+
+p {
+  margin: 0px
+}
