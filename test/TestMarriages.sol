@@ -9,6 +9,7 @@ contract TestMarriages {
   address addressJohn = 0x124;
   address addressMary = 0x123;
   bytes32 marId = keccak256(addressJohn, addressMary);
+
   event showAddress(address _sender, string _msg);
   event showMarId(bytes32 _marId, string _msg);
 
@@ -37,8 +38,16 @@ contract TestMarriages {
     Assert.equal(marriages.marriageNew(addressJohn, addressMary), marId, "Test contract creates a marriage");
   }
 
+  function testContractCreatesNewIncompleteMarriage() {
+    Assert.equal(marriages.marriageStatus(marId), false, "Test contract creates an incomplete marriage by default");
+  }
+
   function testContractCreatesMarriageRecord() {
     Assert.equal(marriages.marriageRecordsId(addressJohn), marId, "Test contract stores marriage records.");
+  }
+
+  function testContractAddsPersonToTheMarriage() {
+    Assert.equal(marriages.addPerson(marId, addressJohn, "John"), true, "Test contract allows a person to be added to the marriage object");
   }
 }
 

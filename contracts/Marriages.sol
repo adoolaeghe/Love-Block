@@ -3,7 +3,10 @@ pragma solidity ^0.4.4;
 contract Marriages {
   mapping (address => address) public proposals;
   mapping (address => bytes32) public marriageRecords;
-
+  mapping (bytes32 => Marriage) public marriages;
+  struct Marriage {
+    bool complete;
+  }
 
   function proposalNew(address me, address myPartner) public returns (bool) {
     proposals[me] = myPartner;
@@ -21,12 +24,20 @@ contract Marriages {
     return marId;
   }
 
+  function marriageStatus(bytes32 marId) public returns (bool) {
+    return marriages[marId].complete;
+  }
+
   function marriageRecordsId(address person) public returns (bytes32) {
     return marriageRecords[person];
   }
 
   function _newMarriageRecord(address person, bytes32 marId) private returns (bool) {
     marriageRecords[person] = marId;
+    return true;
+  }
+
+  function addPerson(bytes32 marId, address _person, bytes32 firstName) public returns (bool) {
     return true;
   }
 
