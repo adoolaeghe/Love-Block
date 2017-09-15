@@ -4,27 +4,16 @@ html
     meta
     title LoveBlock
     link(href='/css/style.css', rel='stylesheet')
-  body
-    div(class="container")
-    div(class="nav-container")
-      h1 LoveBlock
-
-    div(class="article1-container")
-      img(src="")
-      p What is LoveBlock?
-      img(src="")
-
-    div(class="article2-container")
-      p Explaining LoveBlock for Noobs
-
-    div(class="article3-container")
-      a(href="propose.html", Propose page)
-      button Get married
-    div(class="article3-container")
-      button Get my marriage certificate
-body
-script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"
-script src="js/web3.min.js"
-script src="js/truffle-contract.js"
-script src="js/app.js"
-html
+    body
+    
+    include main
+    include propose
+    include pending
+    include confirmation
+    include congratulations
+    include cancelled
+    
+script(src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js")
+script(src="js/web3.min.js")
+script(src="js/truffle-contract.js")
+script(src="js/app.js")
