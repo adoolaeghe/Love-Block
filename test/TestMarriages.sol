@@ -34,7 +34,6 @@ contract TestMarriages {
   }
 
   function testContractAllowsNewMarriagesToBeCreated() {
-    showMarId(marId, "This is the marId");
     Assert.equal(marriages.marriageNew(addressJohn, addressMary), marId, "Test contract creates a marriage");
   }
 
@@ -48,6 +47,10 @@ contract TestMarriages {
 
   function testContractAddsPersonToTheMarriage() {
     Assert.equal(marriages.addPerson(marId, addressJohn, "John"), true, "Test contract allows a person to be added to the marriage object");
+  }
+
+  function testContractStoresPersonInTheMarriage() {
+    Assert.equal(marriages.marriageGetPersonAddress(marId, 0), addressJohn, "Test contract stores first person address.");
   }
 }
 

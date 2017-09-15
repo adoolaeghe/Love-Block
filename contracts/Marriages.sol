@@ -4,8 +4,15 @@ contract Marriages {
   mapping (address => address) public proposals;
   mapping (address => bytes32) public marriageRecords;
   mapping (bytes32 => Marriage) public marriages;
+
   struct Marriage {
     bool complete;
+    Person[] people;
+  }
+
+  struct Person {
+    address _address;
+    bytes32 firstName;
   }
 
   function proposalNew(address me, address myPartner) public returns (bool) {
@@ -28,6 +35,10 @@ contract Marriages {
     return marriages[marId].complete;
   }
 
+  function marriageGetPersonAddress(bytes32 marId, uint256 index) public returns (address) {
+    return marriages[marId].people[index]._address;
+  }
+
   function marriageRecordsId(address person) public returns (bytes32) {
     return marriageRecords[person];
   }
@@ -38,6 +49,7 @@ contract Marriages {
   }
 
   function addPerson(bytes32 marId, address _person, bytes32 firstName) public returns (bool) {
+    marriages[marId].people.push(Person({_address:_person, firstName:firstName}));
     return true;
   }
 
