@@ -10,19 +10,24 @@ contract TestMarriages {
   address addressMary = 0x123;
   event showAddress(address _sender, string _msg);
 
-  function testContractAllowsMakingProposals() {
-    showAddress(this, "Current contract address");
-    showAddress(msg.sender, "Msg.sender");
-    uint32 testReturn = 0;
-    Assert.equal(marriages.proposalNew(addressJohn, addressMary), false, "Test contract allows making proposals.");
+  function testContractAllowsFirstProposal() {
+    Assert.equal(marriages.proposalNew(addressJohn, addressMary), true, "Test contract allows making first proposal.");
+  }
+
+  function testForExistingProposalsAfterFirtstPersonProposed() {
+    Assert.equal(marriages.proposalMatch(addressJohn, addressMary), false, "Matching proposal not found");
   }
 
   function testContractStoresProposal() {
     Assert.equal(marriages.proposals(addressJohn), addressMary, "Test contract stores proposal.");
   }
 
-  function testForExistingProposal() {
-    Assert.equal(marriages.proposalNew(addressMary, addressJohn), true, "Matching proposal is found");
+  function testContractAllowsSecondProposal() {
+    Assert.equal(marriages.proposalNew(addressMary, addressJohn), true, "Test contract allows making second proposal.");
+  }
+
+  function testForExistingProposalsAfterSecondPersonProposed() {
+    Assert.equal(marriages.proposalMatch(addressJohn, addressMary), true, "Matching proposal found");
   }
 }
 

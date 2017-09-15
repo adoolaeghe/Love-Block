@@ -3,14 +3,22 @@ pragma solidity ^0.4.4;
 contract Marriages {
   mapping (address => address) public proposals;
 
-  function proposalNew(address myAddress, address personAddress) returns (bool) {
-    proposals[myAddress] = personAddress;
-    if(proposals[personAddress] == myAddress) {
-      return true;
-    } else {
-      return false;
-    }
+  function proposalNew(address me, address myPartner) returns (bool) {
+    proposals[me] = myPartner;
+    return true;
   }
+
+  function proposalMatch(address me, address myPartner) returns (bool) {
+    return proposals[myPartner] == me ? true : false;
+  }
+
+
+
+
+
+
+
+
 
   /*struct Person {
     address _address;
