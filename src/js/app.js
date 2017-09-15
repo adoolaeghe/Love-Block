@@ -11,6 +11,20 @@ App = {
       web3 = new Web3(App.web3Provider);
     }
     return App.initContract();
+  },
+
+  initProposal: function(){
+    $.getJSON('Marriage.json', function(data) {
+      var MarriageArtifact = data;
+      App.contracts.Marriage = TruffleContract(MarriageArtifact);
+      App.contracts.Marriage.setProvider(App.web3Provider);
+      // return App.markAdopted();
+    });
+    return App.bindEvents();
+  },
+
+  bindEvents: function() {
+    $(document).on('click', '.btn-adopt', App.handleAdopt);
   }
 };
 
