@@ -2,19 +2,32 @@ pragma solidity ^0.4.4;
 
 contract Marriages {
   mapping (address => address) public proposals;
+  mapping (address => bytes32) public marriageRecords;
 
 
-  function proposalNew(address me, address myPartner) returns (bool) {
+  function proposalNew(address me, address myPartner) public returns (bool) {
     proposals[me] = myPartner;
     return true;
   }
 
-  function proposalMatch(address me, address myPartner) returns (bool) {
+  function proposalMatch(address me, address myPartner) public returns (bool) {
     return proposals[myPartner] == me ? true : false;
   }
 
-  function marriageNew(address person1, address person2) returns (bytes32) {
-    return keccak256(person1, person2);
+  function marriageNew(address person1, address person2) public returns (bytes32) {
+    bytes32 marId = keccak256(person1, person2);
+    _newMarriageRecord(person1, marId);
+    _newMarriageRecord(person2, marId);
+    return marId;
+  }
+
+  function marriageRecordsId(address person) public returns (bytes32) {
+    return marriageRecords[person];
+  }
+
+  function _newMarriageRecord(address person, bytes32 marId) private returns (bool) {
+    marriageRecords[person] = marId;
+    return true;
   }
 
 

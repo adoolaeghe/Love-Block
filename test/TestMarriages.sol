@@ -36,6 +36,10 @@ contract TestMarriages {
     showMarId(marId, "This is the marId");
     Assert.equal(marriages.marriageNew(addressJohn, addressMary), marId, "Test contract creates a marriage");
   }
+
+  function testContractCreatesMarriageRecord() {
+    Assert.equal(marriages.marriageRecordsId(addressJohn), marId, "Test contract stores marriage records.");
+  }
 }
 
 /*contract TestMarriages {
