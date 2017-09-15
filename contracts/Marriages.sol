@@ -3,6 +3,7 @@ pragma solidity ^0.4.4;
 contract Marriages {
   mapping (address => address) public proposals;
 
+
   function proposalNew(address me, address myPartner) returns (bool) {
     proposals[me] = myPartner;
     return true;
@@ -10,6 +11,10 @@ contract Marriages {
 
   function proposalMatch(address me, address myPartner) returns (bool) {
     return proposals[myPartner] == me ? true : false;
+  }
+
+  function marriageNew(address person1, address person2) returns (bytes32) {
+    return keccak256(person1, person2);
   }
 
 

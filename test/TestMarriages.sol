@@ -8,7 +8,9 @@ contract TestMarriages {
   Marriages marriages = Marriages(DeployedAddresses.Marriages());
   address addressJohn = 0x124;
   address addressMary = 0x123;
+  bytes32 marId = keccak256(addressJohn, addressMary);
   event showAddress(address _sender, string _msg);
+  event showMarId(bytes32 _marId, string _msg);
 
   function testContractAllowsFirstProposal() {
     Assert.equal(marriages.proposalNew(addressJohn, addressMary), true, "Test contract allows making first proposal.");
@@ -28,6 +30,11 @@ contract TestMarriages {
 
   function testForExistingProposalsAfterSecondPersonProposed() {
     Assert.equal(marriages.proposalMatch(addressJohn, addressMary), true, "Matching proposal found");
+  }
+
+  function testContractAllowsNewMarriagesToBeCreated() {
+    showMarId(marId, "This is the marId");
+    Assert.equal(marriages.marriageNew(addressJohn, addressMary), marId, "Test contract creates a marriage");
   }
 }
 
