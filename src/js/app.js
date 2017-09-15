@@ -23,18 +23,30 @@ App = {
     return App.bindEvents();
   },
 
-  bindEvents: function() {
+  handleGetMarried: function(){
+    $('.getMarriedButton').click(function(){
+      $('.container-main').hide();
+      $('.container-propose').show();
+    });
+  },
 
+  handleSendProposal: function(){
+    $('.sendProposalButton').click(function(event){
+      event.preventDefault();
+      $('.container-propose').hide();
+      $('.container-pending').show();
+      var data = $('form').serialize();
+      console.log("here");
+      console.log(data);
+    });
   }
+
 };
 
 $(function() {
   $(window).load(function() {
     // App.init();
-    $('.getMarriedButton').click(function(){
-      $('.container-main').hide();
-      $('.container-propose').show();
-      console.log('here');
-    });
+    App.handleGetMarried();
+    App.handleSendProposal();
   });
 });
