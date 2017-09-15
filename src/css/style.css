@@ -30,3 +30,11 @@ h1 {
 p {
   margin: 0px
 }
+
+.container-cancelled,
+.container-pending,
+.container-confirmation,
+.container-propose,
+.container-congratulations {
+display: none;
+}

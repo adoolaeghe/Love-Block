@@ -24,12 +24,17 @@ App = {
   },
 
   bindEvents: function() {
-    $(document).on('click', '.btn-adopt', App.handleAdopt);
+
   }
 };
 
 $(function() {
   $(window).load(function() {
-    App.init();
+    // App.init();
+    $('.getMarriedButton').click(function(){
+      $('.container-main').hide();
+      $('.container-propose').show();
+      console.log('here');
+    });
   });
 });

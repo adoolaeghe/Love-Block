@@ -140,10 +140,10 @@
 	"\/src\/js\/app.js": {
 		"ft": 64,
 		"mi": 1,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "\/src\/js\/app-min.js",
-		"oF": 0,
-		"sC": 3,
+		"oF": 1,
+		"sC": 0,
 		"tS": 0
 		},
 	"\/src\/js\/truffle-contract.js": {
@@ -164,23 +164,29 @@
 		"sC": 3,
 		"tS": 0
 		},
-	"\/src\/views\/cancelled.html": {
-		"ft": 8192,
-		"oA": 2,
+	"\/src\/views\/cancelled.jade": {
+		"cOD": 1,
+		"ft": 512,
+		"oA": 1,
 		"oAP": "\/src\/views\/cancelled.html",
-		"oF": 0
+		"oF": 0,
+		"oS": 0
 		},
-	"\/src\/views\/confirmation.html": {
-		"ft": 8192,
-		"oA": 2,
+	"\/src\/views\/confirmation.jade": {
+		"cOD": 1,
+		"ft": 512,
+		"oA": 1,
 		"oAP": "\/src\/views\/confirmation.html",
-		"oF": 0
+		"oF": 0,
+		"oS": 0
 		},
-	"\/src\/views\/congratulations.html": {
-		"ft": 8192,
-		"oA": 2,
+	"\/src\/views\/congratulations.jade": {
+		"cOD": 1,
+		"ft": 512,
+		"oA": 1,
 		"oAP": "\/src\/views\/congratulations.html",
-		"oF": 0
+		"oF": 0,
+		"oS": 0
 		},
 	"\/src\/views\/index.jade": {
 		"cOD": 1,
@@ -190,17 +196,29 @@
 		"oF": 2,
 		"oS": 0
 		},
-	"\/src\/views\/pending.html": {
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/src\/views\/pending.html",
-		"oF": 0
+	"\/src\/views\/main.jade": {
+		"cOD": 1,
+		"ft": 512,
+		"oA": 1,
+		"oAP": "\/src\/views\/main.html",
+		"oF": 0,
+		"oS": 0
 		},
-	"\/src\/views\/propose.html": {
-		"ft": 8192,
-		"oA": 2,
+	"\/src\/views\/pending.jade": {
+		"cOD": 1,
+		"ft": 512,
+		"oA": 1,
+		"oAP": "\/src\/views\/pending.html",
+		"oF": 0,
+		"oS": 0
+		},
+	"\/src\/views\/propose.jade": {
+		"cOD": 1,
+		"ft": 512,
+		"oA": 1,
 		"oAP": "\/src\/views\/propose.html",
-		"oF": 0
+		"oF": 0,
+		"oS": 0
 		},
 	"\/test\/TestMarriage.sol": {
 		"ft": 8192,
