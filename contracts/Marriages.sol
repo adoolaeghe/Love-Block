@@ -1,9 +1,10 @@
 pragma solidity ^0.4.4;
 
 contract Marriages {
+  mapping (address => address) public proposals;
 
   function proposalNew(address personAddress) returns (uint32) {
-    /*mapping (address => address) public proposalRecords;*/
+    proposals[msg.sender] = personAddress;
   }
 
   /*struct Person {

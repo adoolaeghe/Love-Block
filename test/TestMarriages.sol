@@ -7,14 +7,17 @@ import "../contracts/Marriages.sol";
 contract TestMarriages {
   Marriages marriages = Marriages(DeployedAddresses.Marriages());
   address testPartnerAddress = 0x123;
+  event showAddress(address _sender, string _msg);
+
 
   function testContractAllowsMakingProposals() {
     uint32 testReturn = 0;
     Assert.notEqual(marriages.proposalNew(testPartnerAddress), testPartnerAddress, "Test contract allows making proposals.");
   }
 
-  function testContractCreatesProposal() {
-
+  function testContractStoresProposal() {
+    showAddress(marriages.proposals(this), "Proposals retirn");
+    Assert.equal(marriages.proposals(this), testPartnerAddress, "Test contract stores proposal.");
   }
 }
 
