@@ -9,11 +9,31 @@
 	],
 "creatorBuild": "25900",
 "files": {
+	"\/.gitignore": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/.gitignore",
+		"oF": 0
+		},
+	"\/.jshintrc": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/.jshintrc",
+		"oF": 0
+		},
 	"\/_config.yml": {
 		"ft": 8192,
 		"oA": 1,
 		"oAP": "\/_config.yml",
 		"oF": 0
+		},
+	"\/bs-config.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "\/bs-config-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
 		},
 	"\/build\/contracts\/LoveBlock.json": {
 		"ft": 524288,
@@ -77,6 +97,14 @@
 		"oAP": "\/build\/node_modules",
 		"oF": 0
 		},
+	"\/package.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "\/package-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
 	"\/README.md": {
 		"cS": 0,
 		"eF": 1,
@@ -94,6 +122,108 @@
 		"pME": 1,
 		"rFN": 0,
 		"uCM": 0
+		},
+	"\/src\/css\/style.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/src\/css\/style-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/src\/index.html": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/src\/index.html",
+		"oF": 0
+		},
+	"\/src\/js\/app.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/src\/js\/app-min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 0
+		},
+	"\/src\/js\/truffle-contract.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/src\/js\/truffle-contract-min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 0
+		},
+	"\/src\/js\/web3.min.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/src\/js\/web3.min-min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 0
+		},
+	"\/src\/views\/cancelled.jade": {
+		"cOD": 1,
+		"ft": 512,
+		"oA": 1,
+		"oAP": "\/src\/views\/cancelled.html",
+		"oF": 0,
+		"oS": 0
+		},
+	"\/src\/views\/confirmation.jade": {
+		"cOD": 1,
+		"ft": 512,
+		"oA": 1,
+		"oAP": "\/src\/views\/confirmation.html",
+		"oF": 0,
+		"oS": 0
+		},
+	"\/src\/views\/congratulations.jade": {
+		"cOD": 1,
+		"ft": 512,
+		"oA": 1,
+		"oAP": "\/src\/views\/congratulations.html",
+		"oF": 0,
+		"oS": 0
+		},
+	"\/src\/views\/index.jade": {
+		"cOD": 1,
+		"ft": 512,
+		"oA": 0,
+		"oAP": "\/src\/views\/index.html",
+		"oF": 0,
+		"oS": 0
+		},
+	"\/src\/views\/main.jade": {
+		"cOD": 1,
+		"ft": 512,
+		"oA": 1,
+		"oAP": "\/src\/views\/main.html",
+		"oF": 0,
+		"oS": 0
+		},
+	"\/src\/views\/pending.jade": {
+		"cOD": 1,
+		"ft": 512,
+		"oA": 1,
+		"oAP": "\/src\/views\/pending.html",
+		"oF": 0,
+		"oS": 0
+		},
+	"\/src\/views\/propose.jade": {
+		"cOD": 1,
+		"ft": 512,
+		"oA": 1,
+		"oAP": "\/src\/views\/propose.html",
+		"oF": 0,
+		"oS": 0
 		},
 	"\/test\/TestMarriage.sol": {
 		"ft": 8192,
@@ -1170,7 +1300,7 @@
 			},
 		"no-sync": {
 			"active": 0,
-			"optionString": ""
+			"optionString": "{'allowAtRootLevel': false}"
 			},
 		"no-tabs": {
 			"active": 0,
