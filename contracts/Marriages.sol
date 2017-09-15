@@ -3,11 +3,12 @@ pragma solidity ^0.4.4;
 contract Marriages {
   mapping (address => address) public proposals;
 
-  function proposalNew(address personAddress) returns (uint32) {
-    if(proposals[personAddress] == msg.sender) {
-      // start marrige...
+  function proposalNew(address myAddress, address personAddress) returns (bool) {
+    proposals[myAddress] = personAddress;
+    if(proposals[personAddress] == myAddress) {
+      return true;
     } else {
-      proposals[msg.sender] = personAddress;
+      return false;
     }
   }
 

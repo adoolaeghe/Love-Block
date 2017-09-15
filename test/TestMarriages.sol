@@ -6,19 +6,23 @@ import "../contracts/Marriages.sol";
 
 contract TestMarriages {
   Marriages marriages = Marriages(DeployedAddresses.Marriages());
-  address testPartnerAddress = 0x123;
+  address addressJohn = 0x124;
+  address addressMary = 0x123;
   event showAddress(address _sender, string _msg);
-
 
   function testContractAllowsMakingProposals() {
     showAddress(this, "Current contract address");
     showAddress(msg.sender, "Msg.sender");
     uint32 testReturn = 0;
-    Assert.notEqual(marriages.proposalNew(testPartnerAddress), testPartnerAddress, "Test contract allows making proposals.");
+    Assert.equal(marriages.proposalNew(addressJohn, addressMary), false, "Test contract allows making proposals.");
   }
 
   function testContractStoresProposal() {
-    Assert.equal(marriages.proposals(this), testPartnerAddress, "Test contract stores proposal.");
+    Assert.equal(marriages.proposals(addressJohn), addressMary, "Test contract stores proposal.");
+  }
+
+  function testForExistingProposal() {
+    Assert.equal(marriages.proposalNew(addressMary, addressJohn), true, "Matching proposal is found");
   }
 }
 
@@ -28,7 +32,7 @@ contract TestMarriages {
   bytes32 middleName = "Spencer";
   bytes32 familyName = "Smith";
   bytes32 dateOfBirth = "19.02.1907";
-  bytes32 placeOfBirth = "Edinbourgh";
+  bytes32 placeOfBirth = "Edinburgh";
   uint id = 1287163912837;
 
   function testContractAcceptsNewPerson() {

@@ -2,8 +2,30 @@
   "contract_name": "Marriages",
   "abi": [
     {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "name": "proposals",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
       "constant": false,
       "inputs": [
+        {
+          "name": "myAddress",
+          "type": "address"
+        },
         {
           "name": "personAddress",
           "type": "address"
@@ -13,14 +35,14 @@
       "outputs": [
         {
           "name": "",
-          "type": "uint32"
+          "type": "bool"
         }
       ],
       "payable": false,
       "type": "function"
     }
   ],
-  "unlinked_binary": "0x6060604052341561000f57600080fd5b5b60b28061001e6000396000f300606060405263ffffffff7c0100000000000000000000000000000000000000000000000000000000600035041663bc17a3198114603c575b600080fd5b3415604657600080fd5b606573ffffffffffffffffffffffffffffffffffffffff60043516607e565b60405163ffffffff909116815260200160405180910390f35b60005b9190505600a165627a7a723058204fa6a7855c6354f48f6a965ad6f30d1757d4118d2d28f41488edd6fb3fc507520029",
+  "unlinked_binary": "0x6060604052341561000f57600080fd5b5b6101a18061001f6000396000f300606060405263ffffffff7c01000000000000000000000000000000000000000000000000000000006000350416633341b4458114610048578063eadcff9d1461009d575b600080fd5b341561005357600080fd5b61007473ffffffffffffffffffffffffffffffffffffffff600435166100e3565b60405173ffffffffffffffffffffffffffffffffffffffff909116815260200160405180910390f35b34156100a857600080fd5b6100cf73ffffffffffffffffffffffffffffffffffffffff6004358116906024351661010b565b604051901515815260200160405180910390f35b60006020819052908152604090205473ffffffffffffffffffffffffffffffffffffffff1681565b73ffffffffffffffffffffffffffffffffffffffff828116600081815260208190526040808220805473ffffffffffffffffffffffffffffffffffffffff19168686169081179091558252812054909216141561016a5750600161016e565b5060005b5b929150505600a165627a7a72305820a10ed7183a23abd15ee748f2bb1bc7749209e328abc557d67cf137d7c646548d0029",
   "networks": {
     "1505211200541": {
       "events": {},
@@ -37,10 +59,10 @@
     "1505470783170": {
       "events": {},
       "links": {},
-      "address": "0x7947da0ad2d24511c5f700bdea0e4eb307980ad3",
-      "updated_at": 1505470899523
+      "address": "0x7387adf837d09d2de39e224f100f0f4ef0e353c4",
+      "updated_at": 1505477169881
     }
   },
   "schema_version": "0.0.5",
-  "updated_at": 1505471074538
+  "updated_at": 1505477169881
 }
