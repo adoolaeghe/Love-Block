@@ -6,11 +6,15 @@ import "../contracts/Marriages.sol";
 
 contract TestMarriages {
   Marriages marriages = Marriages(DeployedAddresses.Marriages());
+  address testPartnerAddress = 0x123;
 
   function testContractAllowsMakingProposals() {
-    address testPartnerAddress = 0x382eb6006b568c141c1e1af1daf637bce2eb0ec5;
     uint32 testReturn = 0;
     Assert.notEqual(marriages.proposalNew(testPartnerAddress), testPartnerAddress, "Test contract allows making proposals.");
+  }
+
+  function testContractCreatesProposal() {
+
   }
 }
 

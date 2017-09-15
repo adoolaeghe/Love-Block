@@ -2,6 +2,10 @@ pragma solidity ^0.4.4;
 
 contract Marriages {
 
+  function proposalNew(address personAddress) returns (uint32) {
+    /*mapping (address => address) public proposalRecords;*/
+  }
+
   /*struct Person {
     address _address;
     bytes32 firstName;
