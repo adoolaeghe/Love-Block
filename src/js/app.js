@@ -18,7 +18,6 @@ App = {
       var MarriageArtifact = data;
       App.contracts.Marriage = TruffleContract(MarriageArtifact);
       App.contracts.Marriage.setProvider(App.web3Provider);
-      // return App.markAdopted();
     });
     return App.bindEvents();
   },
@@ -33,20 +32,52 @@ App = {
   handleSendProposal: function(){
     $('.sendProposalButton').click(function(event){
       event.preventDefault();
-      $('.container-propose').hide();
-      $('.container-pending').show();
       var data = $('form').serialize();
-      console.log("here");
-      console.log(data);
+      // Make a new proposal if the Accountid is not in the marriage record
+      // If marriage proposal is created, page loads the pending request page.
+      if(x){
+        $('.container-propose').hide();
+        $('.container-pending').show();
+      }
+    });
+  },
+
+  handleUpdatePendingPage: function(){
+    // Recursive function ???
+    // If the marriage request matches, page loads the confirmation page
+    if(true){
+      $('.container-pending').hide();
+      $('.container-confirmation').show();
+    }
+  },
+
+  handleConfirmation: function(){
+    // When a confirm button is triggered, page checks if the other has already confrimed or loads a pending page
+    // Redirect to successful or unsuccessful marriage.
+    $('.confirmYesButton').click(function(event){
+      event.preventDefault();
+      $('.container-confirmation').hide();
+      $('.container-congratulation').show();
+    });
+    $('.confirmNoButton').click(function(event){
+      $('.container-confirmation').hide();
+      $('.container-cancellation').show();
+    });
+  },
+
+  handleCertificate: function(){
+    $('.downloadCertificate').click(function(event){
+      // retrieve the marriage certificate.
     });
   }
-
 };
 
 $(function() {
   $(window).load(function() {
-    // App.init();
     App.handleGetMarried();
     App.handleSendProposal();
+    App.handleUpdatePendingPage();
+    App.handleConfirmation();
+    App.handleCertificate();
   });
 });

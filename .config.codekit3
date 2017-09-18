@@ -4,10 +4,10 @@
 	{
 		"name": "Process All Remaining Files and Folders",
 		"stepType": 1,
-		"uuidString": "16821515-E097-475C-B228-3CE246DDE12A"
+		"uuidString": "1CD86851-2655-439E-A7A0-4C9BF0E4C21C"
 		}
 	],
-"creatorBuild": "25900",
+"creatorBuild": "25849",
 "files": {
 	"\/.gitignore": {
 		"ft": 8192,
@@ -35,60 +35,46 @@
 		"oO": 0,
 		"oS": 1
 		},
-	"\/build\/contracts\/LoveBlock.json": {
-		"ft": 524288,
-		"oA": 1,
-		"oAP": "\/build\/contracts\/LoveBlock-min.json",
-		"oF": 0,
-		"oO": 0,
-		"oS": 1
+	"\/build\/.gitignore": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/build\/.gitignore",
+		"oF": 0
 		},
-	"\/build\/contracts\/Marriage.json": {
-		"ft": 524288,
-		"oA": 1,
-		"oAP": "\/build\/contracts\/Marriage-min.json",
-		"oF": 0,
-		"oO": 0,
-		"oS": 1
-		},
-	"\/build\/contracts\/Migrations.json": {
-		"ft": 524288,
-		"oA": 1,
-		"oAP": "\/build\/contracts\/Migrations-min.json",
-		"oF": 0,
-		"oO": 0,
-		"oS": 1
+	"\/build\/node_modules": {
+		"ft": 65536,
+		"oA": 2,
+		"oAP": "\/build\/build\/node_modules",
+		"oF": 0
 		},
 	"\/contracts\/Marriage.sol": {
 		"ft": 8192,
-		"oA": 2,
+		"oA": 1,
 		"oAP": "\/contracts\/Marriage.sol",
-		"oF": 0
+		"oF": 1
 		},
 	"\/contracts\/Migrations.sol": {
 		"ft": 8192,
-		"oA": 2,
+		"oA": 1,
 		"oAP": "\/contracts\/Migrations.sol",
-		"oF": 0
+		"oF": 1
 		},
 	"\/migrations\/1_initial_migration.js": {
 		"ft": 64,
-		"ma": 0,
 		"mi": 1,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "\/migrations\/1_initial_migration-min.js",
-		"oF": 0,
-		"sC": 3,
+		"oF": 1,
+		"sC": 1,
 		"tS": 0
 		},
 	"\/migrations\/2_deploy_contracts.js": {
 		"ft": 64,
-		"ma": 0,
 		"mi": 1,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "\/migrations\/2_deploy_contracts-min.js",
-		"oF": 0,
-		"sC": 3,
+		"oF": 1,
+		"sC": 1,
 		"tS": 0
 		},
 	"\/node_modules": {
@@ -123,6 +109,22 @@
 		"rFN": 0,
 		"uCM": 0
 		},
+	"\/src\/css\/style-min.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+<<<<<<< HEAD:config.codekit3
+		"oA": 1,
+		"oAP": "\/src\/css\/style-min.css",
+		"oF": 1,
+=======
+		"oA": 0,
+		"oAP": "\/src\/css\/style-min-min.css",
+		"oF": 0,
+>>>>>>> add handling function for each buttons:.config.codekit3
+		"oS": 3
+		},
 	"\/src\/css\/style.css": {
 		"aP": 1,
 		"bl": 0,
@@ -141,32 +143,33 @@
 		},
 	"\/src\/js\/app.js": {
 		"ft": 64,
-		"ma": 0,
 		"mi": 1,
 		"oA": 1,
 		"oAP": "\/src\/js\/app-min.js",
 		"oF": 1,
+<<<<<<< HEAD:config.codekit3
 		"sC": 0,
+=======
+		"sC": 1,
+>>>>>>> add handling function for each buttons:.config.codekit3
 		"tS": 0
 		},
 	"\/src\/js\/truffle-contract.js": {
 		"ft": 64,
-		"ma": 0,
 		"mi": 1,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "\/src\/js\/truffle-contract-min.js",
-		"oF": 0,
-		"sC": 3,
+		"oF": 1,
+		"sC": 1,
 		"tS": 0
 		},
 	"\/src\/js\/web3.min.js": {
 		"ft": 64,
-		"ma": 0,
 		"mi": 1,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "\/src\/js\/web3.min-min.js",
-		"oF": 0,
-		"sC": 3,
+		"oF": 1,
+		"sC": 1,
 		"tS": 0
 		},
 	"\/src\/views\/cancelled.jade": {
@@ -230,16 +233,6 @@
 		"oA": 2,
 		"oAP": "\/test\/TestMarriage.sol",
 		"oF": 0
-		},
-	"\/truffle.js": {
-		"ft": 64,
-		"ma": 0,
-		"mi": 1,
-		"oA": 0,
-		"oAP": "\/truffle-min.js",
-		"oF": 0,
-		"sC": 3,
-		"tS": 0
 		}
 	},
 "hooks": [
@@ -247,10 +240,11 @@
 "manualImportLinks": {
 	},
 "projectAttributes": {
-	"creationDate": 527169100,
+	"creationDate": 527418394,
 	"displayValue": "Love-Block",
 	"displayValueWasSetByUser": 0,
-	"iconImageName": "brackets_green"
+	"iconImageName": "meme-punDog",
+	"lastBuiltDate": 527418417
 	},
 "projectSettings": {
 	"abortBuildOnError": 1,
@@ -654,10 +648,6 @@
 			"active": 0,
 			"optionString": "{'setWithoutGet': true, 'getWithoutSet': false}"
 			},
-		"array-bracket-newline": {
-			"active": 0,
-			"optionString": "{'multiline': true, 'minItems': null}"
-			},
 		"array-bracket-spacing": {
 			"active": 0,
 			"optionString": "'never', {'singleValue': false, 'objectsInArrays': false, 'arraysInArrays': false}"
@@ -665,10 +655,6 @@
 		"array-callback-return": {
 			"active": 0,
 			"optionString": ""
-			},
-		"array-element-newline": {
-			"active": 0,
-			"optionString": "'always'"
 			},
 		"arrow-body-style": {
 			"active": 0,
@@ -766,10 +752,6 @@
 			"active": 0,
 			"optionString": "'always', {'null': 'always'}"
 			},
-		"for-direction": {
-			"active": 0,
-			"optionString": ""
-			},
 		"func-call-spacing": {
 			"active": 0,
 			"optionString": "'never'"
@@ -789,10 +771,6 @@
 		"generator-star-spacing": {
 			"active": 0,
 			"optionString": "{'before': true, 'after': false}"
-			},
-		"getter-return": {
-			"active": 0,
-			"optionString": "{'allowImplicit': false}"
 			},
 		"global-require": {
 			"active": 0,
@@ -922,10 +900,6 @@
 			"active": 0,
 			"optionString": "{'allow': ['~'], 'int32Hint': true}"
 			},
-		"no-buffer-constructor": {
-			"active": 0,
-			"optionString": ""
-			},
 		"no-caller": {
 			"active": 0,
 			"optionString": ""
@@ -1052,7 +1026,7 @@
 			},
 		"no-extra-parens": {
 			"active": 0,
-			"optionString": "'all', {'conditionalAssign': false, 'returnAssign': false, 'nestedBinaryExpressions': false, 'ignoreJSX': 'none', 'enforceForArrowConditionals': false}"
+			"optionString": "'all', {'conditionalAssign': false, 'returnAssign': false, 'nestedBinaryExpressions': false, 'ignoreJSX': 'none'}"
 			},
 		"no-extra-semi": {
 			"active": 1,
@@ -1324,7 +1298,7 @@
 			},
 		"no-trailing-spaces": {
 			"active": 0,
-			"optionString": "{'skipBlankLines': false, 'ignoreComments': false}"
+			"optionString": "{'skipBlankLines': false}"
 			},
 		"no-undef": {
 			"active": 1,
@@ -1340,7 +1314,7 @@
 			},
 		"no-underscore-dangle": {
 			"active": 0,
-			"optionString": "{'allow': [], 'allowAfterThis': false, 'allowAfterSuper': false, 'enforceInMethodNames': false}"
+			"optionString": "{'allow': [], 'allowAfterThis': false, 'allowAfterSuper': false}"
 			},
 		"no-unexpected-multiline": {
 			"active": 1,
@@ -1470,10 +1444,6 @@
 			"active": 0,
 			"optionString": "{'blocks': 'always', 'switches': 'always', 'classes': 'always'}"
 			},
-		"padding-line-between-statements": {
-			"active": 0,
-			"optionString": "{blankLine: 'always', prev:'*', next:'return'}"
-			},
 		"prefer-arrow-callback": {
 			"active": 0,
 			"optionString": ""
@@ -1542,10 +1512,6 @@
 			"active": 0,
 			"optionString": "{'before': false, 'after': true}"
 			},
-		"semi-style": {
-			"active": 0,
-			"optionString": "'last'"
-			},
 		"sort-imports": {
 			"active": 0,
 			"optionString": "{'ignoreCase': false, 'ignoreMemberSort': true, 'memberSyntaxSortOrder': ['none', 'all', 'multiple', 'single']}"
@@ -1585,10 +1551,6 @@
 		"strict": {
 			"active": 0,
 			"optionString": "'safe'"
-			},
-		"switch-colon-spacing": {
-			"active": 0,
-			"optionString": "{'after': true, 'before': false}"
 			},
 		"symbol-description": {
 			"active": 0,
@@ -1642,7 +1604,7 @@
 	"esLintSourceType": 0,
 	"externalServerAddress": "http:\/\/localhost:8888",
 	"gitIgnoreBuildFolder": 1,
-	"hideConfigFile": 0,
+	"hideConfigFile": 1,
 	"jsCheckerReservedNamesString": "",
 	"jsHintFlags2": {
 		"asi": {
@@ -2057,7 +2019,7 @@
 		"autoOutputPathStyle": 0,
 		"createSourceMap": 0,
 		"minifyOutput": 1,
-		"syntaxCheckerStyle": 3,
+		"syntaxCheckerStyle": 1,
 		"transpilerStyle": 0
 		},
 	"languageDefaultsJSON": {
@@ -2222,7 +2184,6 @@
 	"previewPathAddition": "",
 	"skippedFoldersString": "log, _logs, logs, _cache, cache, \/storage\/framework\/sessions, node_modules",
 	"sourceFolderName": "source",
-	"susyVersion": 3,
 	"uglifyDefinesString": "",
 	"uglifyFlags2": {
 		"ascii-only": {
