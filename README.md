@@ -28,4 +28,5 @@ I would like to be able to choose between yes and no.
 * Respect that everyone has a life outside of the project
 * Document key moments in the project
 * Change pairs regularly
+* Have a different stand up/retro leader each day
 * Be kind to each other :)
