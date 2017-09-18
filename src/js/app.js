@@ -48,10 +48,11 @@ App = {
           marriageInstance = instance;
           console.log("1");
           console.log(marriageInstance);
-          return marriageInstance.marriageNew(senderAccountId, receiverAccountId);
+          return marriageInstance.proposalNew(senderAccountId, receiverAccountId);
           console.log("2");
           }).then(function(result) {
             console.log("3");
+            console.log(marriageInstance.proposalMatch(senderAccountId,receiverAccountId).call())
           }).catch(function(err) {
             console.log(err.message);
           });
