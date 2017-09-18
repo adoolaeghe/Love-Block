@@ -20,8 +20,8 @@ contract Marriages {
   }
 
   function proposalNew(address me, address myPartner) public returns (bool) {
-    assert (!_personIsMarried(me));
-    assert (!_personIsMarried(myPartner));
+    require (!_personIsMarried(me));
+    require (!_personIsMarried(myPartner));
     proposals[me] = myPartner;
     return true;
   }
@@ -31,7 +31,7 @@ contract Marriages {
   }
 
   function marriageNew(address person1, address person2) public returns (bytes32) {
-    assert (_canMarry(person1, person2));
+    require (_canMarry(person1, person2));
     bytes32 marId = keccak256(person1, person2);
     _newMarriageRecord(person1, marId);
     _newMarriageRecord(person2, marId);
@@ -64,9 +64,9 @@ contract Marriages {
   }
 
   function _canMarry(address person1, address person2) private returns (bool) {
+    if(_personIsMarried(person1)) { return false; }
+    if(_personIsMarried(person2)) { return false; }
     if(!(proposalMatch(person1, person2) && proposalMatch(person2, person1))) { return false; }
-    if(marriageIsComplete(marriageRecordsId(person1))) { return false; }
-    if(marriageIsComplete(marriageRecordsId(person2))) { return false; }
     return true;
   }
 
