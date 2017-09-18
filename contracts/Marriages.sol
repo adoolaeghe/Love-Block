@@ -63,4 +63,13 @@ contract Marriages {
     if(marriageIsComplete(marriageRecordsId(person2))) { return false; }
     return true;
   }
+
+  function _marriageCompleteIfRequired(bytes32 marId) private returns (bool) {
+    if (marriages[marId].people.length == 2) {
+      marriages[marId].complete = true;
+      return true;
+    } else {
+      return false;
+    }
+  }
 }
