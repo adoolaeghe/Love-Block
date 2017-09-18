@@ -18,7 +18,7 @@ contract TestMarriages {
   }
 
   function testForExistingProposalsAfterFirtstPersonProposed() {
-    Assert.equal(marriages.proposalMatch(addressJohn, addressMary), false, "Matching proposal not found");
+    Assert.equal(marriages.proposalMatch(addressJohn, addressMary), false, "Matching proposal not found.");
   }
 
   function testContractStoresProposal() {
@@ -30,15 +30,15 @@ contract TestMarriages {
   }
 
   function testForExistingProposalsAfterSecondPersonProposed() {
-    Assert.equal(marriages.proposalMatch(addressJohn, addressMary), true, "Matching proposal found");
+    Assert.equal(marriages.proposalMatch(addressJohn, addressMary), true, "Matching proposal found.");
   }
 
   function testContractAllowsNewMarriagesToBeCreated() {
-    Assert.equal(marriages.marriageNew(addressJohn, addressMary), marId, "Test contract creates a marriage");
+    Assert.equal(marriages.marriageNew(addressJohn, addressMary), marId, "Test contract creates a marriage.");
   }
 
   function testContractCreatesNewIncompleteMarriage() {
-    Assert.equal(marriages.marriageStatus(marId), false, "Test contract creates an incomplete marriage by default");
+    Assert.equal(marriages.marriageIsComplete(marId), false, "Test contract creates an incomplete marriage by default.");
   }
 
   function testContractCreatesMarriageRecord() {
@@ -46,10 +46,18 @@ contract TestMarriages {
   }
 
   function testContractAddsPersonToTheMarriage() {
-    Assert.equal(marriages.addPerson(marId, addressJohn, "John"), true, "Test contract allows a person to be added to the marriage object");
+    Assert.equal(marriages.addPerson(marId, addressJohn, "John"), true, "Test contract allows a person to be added to the marriage object.");
   }
 
   function testContractStoresPersonInTheMarriage() {
     Assert.equal(marriages.marriageGetPersonAddress(marId, 0), addressJohn, "Test contract stores first person address.");
+  }
+
+  function testContractAddsSecondPersonToTheMarriage() {
+    Assert.equal(marriages.addPerson(marId, addressMary, "Mary"), true, "Test contract allows a second person to be added to the marriage object.");
+  }
+
+  function testContractSetsMarriageComplete() {
+    Assert.equal(marriages.marriageIsComplete(marId), true, "The marriage sets complete after a second person has been added.");
   }
 }

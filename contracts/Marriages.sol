@@ -25,13 +25,14 @@ contract Marriages {
   }
 
   function marriageNew(address person1, address person2) public returns (bytes32) {
+    assert (_canMarry(person1, person2));
     bytes32 marId = keccak256(person1, person2);
     _newMarriageRecord(person1, marId);
     _newMarriageRecord(person2, marId);
     return marId;
   }
 
-  function marriageStatus(bytes32 marId) public returns (bool) {
+  function marriageIsComplete(bytes32 marId) public returns (bool) {
     return marriages[marId].complete;
   }
 
@@ -43,13 +44,23 @@ contract Marriages {
     return marriageRecords[person];
   }
 
+  function addPerson(bytes32 marId, address _person, bytes32 firstName) public returns (bool) {
+    marriages[marId].people.push(Person({_address:_person, firstName:firstName}));
+    _marriageCompleteIfRequired(marId);
+    return true;
+  }
+
+  /* Private implementation */
+
   function _newMarriageRecord(address person, bytes32 marId) private returns (bool) {
     marriageRecords[person] = marId;
     return true;
   }
 
-  function addPerson(bytes32 marId, address _person, bytes32 firstName) public returns (bool) {
-    marriages[marId].people.push(Person({_address:_person, firstName:firstName}));
+  function _canMarry(address person1, address person2) private returns (bool) {
+    if(!(proposalMatch(person1, person2) && proposalMatch(person2, person1))) { return false; }
+    if(marriageIsComplete(marriageRecordsId(person1))) { return false; }
+    if(marriageIsComplete(marriageRecordsId(person2))) { return false; }
     return true;
   }
 }
