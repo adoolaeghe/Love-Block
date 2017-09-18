@@ -32,10 +32,8 @@ App = {
   handleSendProposal: function(){
     $('.sendProposalButton').click(function(event){
       event.preventDefault();
-
       var data = $('form').serializeArray();
       var receiverAccountId = data[0].value;
-      console.log(receiverAccountId);
 
       web3.eth.getAccounts(function(error, accounts) {
         if (error) {
@@ -43,23 +41,23 @@ App = {
         }
         var senderAccountId = accounts[0];
         console.log(senderAccountId);
-
-        App.contracts.Marriages.deployed().then(function(instance) {
-          marriageInstance = instance;
-          console.log("1");
-          console.log(marriageInstance);
-          return marriageInstance.proposalNew(senderAccountId, receiverAccountId);
-          console.log("2");
-          }).then(function(result) {
-            console.log("3");
-            console.log(marriageInstance.proposalMatch(senderAccountId,receiverAccountId).call())
-          }).catch(function(err) {
-            console.log(err.message);
-          });
-        // Make a new proposal if the Accountid is not in the marriage record
-        // If marriage proposal is created, page loads the pending request page.
-        $('.container-propose').hide();
-        $('.container-pending').show();
+        
+      App.contracts.Marriages.deployed().then(function(instance) {
+        marriageInstance = instance;
+        console.log("1");
+        return marriageInstance.proposalNew(senderAccountId, receiverAccountId);
+        console.log("2");
+        }).then(function(result) {
+          console.log("3");
+          return marriageInstance.proposalMatch.call(senderAccountId,receiverAccountId);
+        }).then(function(value){
+          if(value) {
+            $('.container-propose').hide();
+            $('.container-pending').show();
+          }
+        }).catch(function(err) {
+          console.log(err.message);
+        });
       });
     });
   },
