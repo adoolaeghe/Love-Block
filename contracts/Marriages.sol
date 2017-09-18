@@ -20,6 +20,8 @@ contract Marriages {
   }
 
   function proposalNew(address me, address myPartner) public returns (bool) {
+    assert (!_personIsMarried(me));
+    assert (!_personIsMarried(myPartner));
     proposals[me] = myPartner;
     return true;
   }
@@ -75,5 +77,9 @@ contract Marriages {
     } else {
       return false;
     }
+  }
+
+  function _personIsMarried(address person) private returns(bool) {
+    return marriageIsComplete(marriageRecordsId(person));
   }
 }
