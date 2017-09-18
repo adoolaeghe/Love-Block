@@ -13,6 +13,10 @@ contract Marriages {
   struct Person {
     address _address;
     bytes32 firstName;
+    bytes32 middleName;
+    bytes32 lastName;
+    bytes32 dateOfBirth;
+    uint id;
   }
 
   function proposalNew(address me, address myPartner) public returns (bool) {
@@ -44,8 +48,8 @@ contract Marriages {
     return marriageRecords[person];
   }
 
-  function addPerson(bytes32 marId, address _person, bytes32 firstName) public returns (bool) {
-    marriages[marId].people.push(Person({_address:_person, firstName:firstName}));
+  function addPerson(bytes32 marId, address _person, bytes32 firstName, bytes32 middleName, bytes32 lastName, bytes32 dateOfBirth, uint id) public returns (bool) {
+    marriages[marId].people.push(Person({_address:_person, firstName:firstName, middleName:middleName, lastName:lastName, dateOfBirth:dateOfBirth, id:id}));
     _marriageCompleteIfRequired(marId);
     return true;
   }

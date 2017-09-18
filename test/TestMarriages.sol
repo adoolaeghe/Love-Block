@@ -46,7 +46,7 @@ contract TestMarriages {
   }
 
   function testContractAddsPersonToTheMarriage() {
-    Assert.equal(marriages.addPerson(marId, addressJohn, "John"), true, "Test contract allows a person to be added to the marriage object.");
+    Assert.equal(marriages.addPerson(marId, addressJohn, "John", "Fred", "Smith", "01/01/80", 1), true, "Test contract allows a person to be added to the marriage object.");
   }
 
   function testContractStoresPersonInTheMarriage() {
@@ -54,7 +54,7 @@ contract TestMarriages {
   }
 
   function testContractAddsSecondPersonToTheMarriage() {
-    Assert.equal(marriages.addPerson(marId, addressMary, "Mary"), true, "Test contract allows a second person to be added to the marriage object.");
+    Assert.equal(marriages.addPerson(marId, addressMary, "Mary", "Kate", "Jones", "02/02/81", 2), true, "Test contract allows a second person to be added to the marriage object.");
   }
 
   function testContractSetsMarriageComplete() {

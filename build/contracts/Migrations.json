@@ -106,8 +106,8 @@
     "1505470783170": {
       "events": {},
       "links": {},
-      "address": "0x9ebc33d84634d3b97b162472f66ca9f9a9d436f6",
-      "updated_at": 1505733215350
+      "address": "0x5f2660bf4ad48f28096ee8d0d6c2ffc1204d3ce6",
+      "updated_at": 1505734181807
     },
     "1505725824240": {
       "events": {},
@@ -117,5 +117,5 @@
     }
   },
   "schema_version": "0.0.5",
-  "updated_at": 1505733215350
+  "updated_at": 1505734181807
 }
