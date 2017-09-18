@@ -141,15 +141,7 @@
 		"oA": 1,
 		"oAP": "\/src\/js\/app-min.js",
 		"oF": 1,
-<<<<<<< HEAD
-<<<<<<< HEAD:config.codekit3
-		"sC": 0,
-=======
 		"sC": 1,
->>>>>>> add handling function for each buttons:.config.codekit3
-=======
-		"sC": 1,
->>>>>>> 7a49cd6b9a7a87715307075788e84f8d171383db
 		"tS": 0
 		},
 	"\/src\/js\/truffle-contract.js": {
@@ -198,13 +190,8 @@
 		"cOD": 1,
 		"ft": 512,
 		"oA": 0,
-<<<<<<< HEAD
 		"oAP": "\/src\/index.html",
 		"oF": 2,
-=======
-		"oAP": "\/src\/views\/index.html",
-		"oF": 0,
->>>>>>> 7a49cd6b9a7a87715307075788e84f8d171383db
 		"oS": 0
 		},
 	"\/src\/views\/main.jade": {
