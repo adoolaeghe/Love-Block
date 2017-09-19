@@ -98,19 +98,21 @@ App = {
     // If the marriage request matches, page loads the confirmation page
   },
 
-  handleConfirmation: function(){
-    // When a confirm button is triggered, page checks if the other has already confrimed or loads a pending page
-    // Redirect to successful or unsuccessful marriage.
+
+  handleClickYesIdo: function() {
     $('.confirmYesButton').click(function(event){
       event.preventDefault();
       $('.container-confirmation').hide();
-      $('.container-congratulation').show();
+      $('.container-form').show();
     });
     $('.confirmNoButton').click(function(event){
+      event.preventDefault();
       $('.container-confirmation').hide();
       $('.container-cancellation').show();
     });
   },
+
+
 
   handleCertificate: function(){
     $('.downloadCertificate').click(function(event){
@@ -124,7 +126,7 @@ $(function() {
     App.initWeb3();
     App.handleGetMarried();
     App.handleSendProposal();
-    App.handleConfirmation();
+    App.handleClickYesIdo();
     App.handleCertificate();
   });
 });

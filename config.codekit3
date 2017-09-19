@@ -35,14 +35,6 @@
 		"oO": 0,
 		"oS": 1
 		},
-	"\/build\/contracts\/Marriage.json": {
-		"ft": 524288,
-		"oA": 1,
-		"oAP": "\/build\/contracts\/Marriage-min.json",
-		"oF": 0,
-		"oO": 0,
-		"oS": 1
-		},
 	"\/build\/contracts\/Marriages.json": {
 		"ft": 524288,
 		"oA": 1,
@@ -58,20 +50,6 @@
 		"oF": 0,
 		"oO": 0,
 		"oS": 1
-		},
-	"\/build\/contracts\/Proposal.json": {
-		"ft": 524288,
-		"oA": 1,
-		"oAP": "\/build\/contracts\/Proposal-min.json",
-		"oF": 0,
-		"oO": 0,
-		"oS": 1
-		},
-	"\/build\/node_modules": {
-		"ft": 65536,
-		"oA": 2,
-		"oAP": "\/build\/build\/node_modules",
-		"oF": 0
 		},
 	"\/contracts\/Marriages.sol": {
 		"ft": 8192,
@@ -161,12 +139,6 @@
 		"oF": 1,
 		"oS": 3
 		},
-	"\/src\/index.html": {
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/src\/index.html",
-		"oF": 0
-		},
 	"\/src\/js\/app.js": {
 		"ft": 64,
 		"mi": 1,
@@ -226,18 +198,12 @@
 		"oF": 0,
 		"oS": 0
 		},
-	"\/src\/views\/index.html": {
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/src\/views\/index.html",
-		"oF": 0
-		},
 	"\/src\/views\/index.jade": {
 		"cOD": 1,
 		"ft": 512,
 		"oA": 0,
-		"oAP": "\/src\/views\/index.html",
-		"oF": 0,
+		"oAP": "\/src\/index.html",
+		"oF": 2,
 		"oS": 0
 		},
 	"\/src\/views\/main.jade": {
@@ -289,7 +255,7 @@
 	"displayValue": "Love-Block",
 	"displayValueWasSetByUser": 0,
 	"iconImageName": "meme-punDog",
-	"lastBuiltDate": 527418417
+	"lastBuiltDate": 527526302
 	},
 "projectSettings": {
 	"abortBuildOnError": 1,
