@@ -13,6 +13,8 @@ contract TestMarriages {
   event showAddress(address _sender, string _msg);
   event showMarId(bytes32 _marId, string _msg);
 
+  /* Creation and completion of the marriage */
+
   function testContractAllowsFirstProposal() {
     Assert.equal(marriages.proposalNew(addressJohn, addressMary), true, "Test contract allows making first proposal.");
   }
@@ -46,15 +48,11 @@ contract TestMarriages {
   }
 
   function testContractCreatesMarriageRecord() {
-    Assert.equal(marriages.marriageRecordsId(addressJohn), marId, "Test contract stores marriage records.");
+    Assert.equal(marriages.marriageGetMarIdForPerson(addressJohn), marId, "Test contract stores marriage records.");
   }
 
   function testContractAddsPersonToTheMarriage() {
     Assert.equal(marriages.addPerson(marId, addressJohn, "John", "Fred", "Smith", "01/01/80", 1), true, "Test contract allows a person to be added to the marriage object.");
-  }
-
-  function testContractStoresPersonInTheMarriage() {
-    Assert.equal(marriages.marriageGetPersonAddress(marId, 0), addressJohn, "Test contract stores first person address.");
   }
 
   function testContractAddsSecondPersonToTheMarriage() {
@@ -69,5 +67,20 @@ contract TestMarriages {
     Assert.notEqual(marriages.timeStamp(marId), 0, "Test contract adds a timestamp upon completion of the marriage.");
   }
 
+  /* Retreiving the complete certificate data */
 
+  function testContractStoresPeoplesAddresses() {
+    Assert.equal(marriages.marriageGetPersonAddress(marId, 0), addressJohn, "Test contract stores first person address.");
+    Assert.equal(marriages.marriageGetPersonAddress(marId, 1), addressMary, "Test contract stores second person address.");
+  }
+
+  function testContractStoresPeoplesFirstNames() {
+    Assert.equal(marriages.marriageGetPersonFirstName(marId, 0), "John", "Test contract stores first persons first name");
+    Assert.equal(marriages.marriageGetPersonFirstName(marId, 1), "Mary", "Test contract stores second persons first name");
+  }
+
+  function testContractStoresPeoplesMiddleNames() {
+    Assert.equal(marriages.marriageGetPersonMiddleName(marId, 0), "Fred", "Test contract stores first persons middle name");
+    Assert.equal(marriages.marriageGetPersonMiddleName(marId, 1), "Kate", "Test contract stores second persons middle name");
+  }
 }
