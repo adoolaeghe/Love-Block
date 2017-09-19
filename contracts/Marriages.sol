@@ -56,10 +56,6 @@ contract Marriages {
     return marriageRecords[person];
   }
 
-  function timeStamp(bytes32 marId) public returns (uint256) {
-    return marriages[marId].timeStamp;
-  }
-
   /* Marriage certificate methods */
 
   function marriageGetPersonFirstName(bytes32 marId, uint256 index) public returns (bytes32) {
@@ -70,6 +66,25 @@ contract Marriages {
   function marriageGetPersonMiddleName(bytes32 marId, uint256 index) public returns (bytes32) {
     require (marriageIsComplete(marId));
     return marriages[marId].people[index].middleName;
+  }
+
+  function marriageGetPersonLastName(bytes32 marId, uint256 index) public returns (bytes32) {
+    require (marriageIsComplete(marId));
+    return marriages[marId].people[index].lastName;
+  }
+
+  function marriageGetPersonDateOfBirth(bytes32 marId, uint256 index) public returns (bytes32) {
+    require (marriageIsComplete(marId));
+    return marriages[marId].people[index].dateOfBirth;
+  }
+
+  function marriageGetPersonId(bytes32 marId, uint256 index) public returns (uint) {
+    require (marriageIsComplete(marId));
+    return marriages[marId].people[index].id;
+  }
+
+  function timeStamp(bytes32 marId) public returns (uint256) {
+    return marriages[marId].timeStamp;
   }
 
   /* Private implementation */

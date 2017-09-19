@@ -10,17 +10,16 @@ App = {
       App.web3Provider = new web3.providers.HttpProvider('http://localhost:8545');
       web3 = new Web3(App.web3Provider);
     }
-    return App.initContract();
+    return App.initProposal();
   },
 
   initProposal: function(){
-    $.getJSON('Marriage.json', function(data) {
-      var MarriageArtifact = data;
-      App.contracts.Marriage = TruffleContract(MarriageArtifact);
-      App.contracts.Marriage.setProvider(App.web3Provider);
-      // return App.markAdopted();
+    $.getJSON('Marriages.json', function(data) {
+      var MarriagesArtifact = data;
+      App.contracts.Marriages = TruffleContract(MarriagesArtifact);
+      App.contracts.Marriages.setProvider(App.web3Provider);
     });
-    return App.bindEvents();
+    // return App.bindEvents();
   },
 
   handleGetMarried: function(){
@@ -33,20 +32,73 @@ App = {
   handleSendProposal: function(){
     $('.sendProposalButton').click(function(event){
       event.preventDefault();
-      $('.container-propose').hide();
-      $('.container-pending').show();
-      var data = $('form').serialize();
-      console.log("here");
-      console.log(data);
+      var data = $('form').serializeArray();
+      var receiverAccountId = data[0].value;
+
+      web3.eth.getAccounts(function(error, accounts) {
+        if (error) {
+          console.log(error);
+        }
+        var senderAccountId = accounts[0];
+        console.log(senderAccountId);
+        
+      App.contracts.Marriages.deployed().then(function(instance) {
+        marriageInstance = instance;
+        console.log("1");
+        return marriageInstance.proposalNew(senderAccountId, receiverAccountId);
+        console.log("2");
+        }).then(function(result) {
+          console.log("3");
+          return marriageInstance.proposalMatch.call(senderAccountId,receiverAccountId);
+        }).then(function(value){
+          if(value) {
+            $('.container-propose').hide();
+            $('.container-pending').show();
+          }
+        }).catch(function(err) {
+          console.log(err.message);
+        });
+      });
+    });
+  },
+
+  handleUpdatePendingPage: function(){
+    // Recursive function ???
+    // If the marriage request matches, page loads the confirmation page
+    if(false){
+      $('.container-pending').hide();
+      $('.container-confirmation').show();
+    }
+  },
+
+  handleConfirmation: function(){
+    // When a confirm button is triggered, page checks if the other has already confrimed or loads a pending page
+    // Redirect to successful or unsuccessful marriage.
+    $('.confirmYesButton').click(function(event){
+      event.preventDefault();
+      $('.container-confirmation').hide();
+      $('.container-congratulation').show();
+    });
+    $('.confirmNoButton').click(function(event){
+      $('.container-confirmation').hide();
+      $('.container-cancellation').show();
+    });
+  },
+
+  handleCertificate: function(){
+    $('.downloadCertificate').click(function(event){
+      // retrieve the marriage certificate.
     });
   }
-
 };
 
 $(function() {
   $(window).load(function() {
-    // App.init();
+    App.initWeb3();
     App.handleGetMarried();
     App.handleSendProposal();
+    App.handleUpdatePendingPage();
+    App.handleConfirmation();
+    App.handleCertificate();
   });
 });
