@@ -51,7 +51,7 @@ App = {
         console.log("2");
         }).then(function(result) {
           console.log("3");
-          setTimeout(function() { App.checkForMatchingProposal(senderAccountId, receiverAccountId);}, 5000);
+          setTimeout(function() { App.checkForMatchingProposal(senderAccountId, receiverAccountId);}, 3000);
         }).catch(function(err) {
           console.log(err.message);
         });
@@ -94,10 +94,41 @@ App = {
     }).catch(function(err) {
       console.log(err.message);
     });
-    // Recursive function ???
-    // If the marriage request matches, page loads the confirmation page
   },
 
+  handleGetPersonDetails() {
+      $('.personalDetailsButton').click(function(event){
+        event.preventDefault();
+        var data = $('form').serializeArray();
+        console.log(data);
+        var _address = data[2].value;
+        var firstName = data[3].value;
+        var middleName = data[4].value;
+        var lastName = data[5].value;
+        var dateOfBirth = data[6].value;
+        var id = data[7].value;
+
+      App.contracts.Marriages.deployed().then(function(instance) {
+        marriageInstance = instance;
+        console.log(_address)
+        return marriageInstance.marriageNew.call(senderAccountId,receiverAccountId);
+        }).then(function(marId){
+          console.log("8")
+          console.log(marId);
+          App.handleAddPersonToMarriage(marId, _address, firstName, middleName, lastName, dateOfBirth, id);
+        }).catch(function(err) {
+          console.log(err.message);
+        });
+      });
+    },
+
+  handleAddPersonToMarriage(marId, _address, firstName, middleName, lastName, dateOfBirth, id) {
+    App.contracts.Marriages.deployed().then(function(instance) {
+      marriageInstance = instance;
+      marriageInstance.addPerson(marId, _address, firstName, middleName, lastName, dateOfBirth, id);
+      console.log("9");
+    });
+  },
 
   handleClickYesIdo: function() {
     $('.confirmYesButton').click(function(event){
@@ -127,6 +158,7 @@ $(function() {
     App.handleGetMarried();
     App.handleSendProposal();
     App.handleClickYesIdo();
+    App.handleGetPersonDetails();
     App.handleCertificate();
   });
 });
