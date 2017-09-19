@@ -124,7 +124,6 @@ $(function() {
     App.initWeb3();
     App.handleGetMarried();
     App.handleSendProposal();
-    // App.handleUpdatePendingPage();
     App.handleConfirmation();
     App.handleCertificate();
   });
