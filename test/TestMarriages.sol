@@ -37,6 +37,7 @@ contract TestMarriages {
 
   function testContractAllowsNewMarriagesToBeCreated() {
     Assert.equal(marriages.marriageNew(addressJohn, addressMary), marId, "Test contract creates a marriage.");
+    Assert.equal(marriages.marriageNew(addressMary, addressJohn), marId, "Test contract creates a marriage.");
   }
 
   function testContractHasDefaultTimestampOfZero() {
