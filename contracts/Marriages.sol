@@ -20,9 +20,6 @@ contract Marriages {
   }
 
   function proposalNew(address me, address myPartner) public returns (bool) {
-    if(!_personIsMarried(me)) {
-      revert();
-    }
     require (!_personIsMarried(me) && !_personIsMarried(myPartner));
     proposals[me] = myPartner;
     return true;
