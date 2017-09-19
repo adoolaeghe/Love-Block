@@ -37,6 +37,10 @@ contract TestMarriages {
     Assert.equal(marriages.marriageNew(addressJohn, addressMary), marId, "Test contract creates a marriage.");
   }
 
+  function testContractHasDefaultTimestampOfZero() {
+    Assert.equal(marriages.timeStamp(marId), 0, "Test contract has default timestamp of zero");
+  }
+
   function testContractCreatesNewIncompleteMarriage() {
     Assert.equal(marriages.marriageIsComplete(marId), false, "Test contract creates an incomplete marriage by default.");
   }
@@ -60,4 +64,10 @@ contract TestMarriages {
   function testContractSetsMarriageComplete() {
     Assert.equal(marriages.marriageIsComplete(marId), true, "The marriage sets complete after a second person has been added.");
   }
+
+  function testContractAddsTimestamp() {
+    Assert.notEqual(marriages.timeStamp(marId), 0, "Test contract adds a timestamp upon completion of the marriage.");
+  }
+
+
 }

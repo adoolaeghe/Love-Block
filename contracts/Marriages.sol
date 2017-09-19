@@ -8,6 +8,7 @@ contract Marriages {
   struct Marriage {
     bool complete;
     Person[] people;
+    uint256 timeStamp;
   }
 
   struct Person {
@@ -55,6 +56,10 @@ contract Marriages {
     return true;
   }
 
+  function timeStamp(bytes32 marId) public returns (uint256) {
+    return marriages[marId].timeStamp;
+  }
+
   /* Private implementation */
 
   function _newMarriageRecord(address person, bytes32 marId) private returns (bool) {
@@ -72,6 +77,7 @@ contract Marriages {
   function _marriageCompleteIfRequired(bytes32 marId) private returns (bool) {
     if (marriages[marId].people.length == 2) {
       marriages[marId].complete = true;
+      _setTimeStamp(marId);
       return true;
     } else {
       return false;
@@ -80,5 +86,11 @@ contract Marriages {
 
   function _personIsMarried(address person) private returns(bool) {
     return marriageIsComplete(marriageRecordsId(person));
+  }
+
+  function _setTimeStamp(bytes32 marId) private returns(uint256) {
+    uint256 timeNow = now;
+    marriages[marId].timeStamp = timeNow;
+    return timeNow;
   }
 }
