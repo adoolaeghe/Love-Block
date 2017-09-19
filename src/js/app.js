@@ -35,13 +35,15 @@ App = {
       var data = $('form').serializeArray();
       var receiverAccountId = data[0].value;
 
+      var marriageInstance;
+
       web3.eth.getAccounts(function(error, accounts) {
         if (error) {
           console.log(error);
         }
         var senderAccountId = accounts[0];
         console.log(senderAccountId);
-        
+
       App.contracts.Marriages.deployed().then(function(instance) {
         marriageInstance = instance;
         console.log("1");
@@ -49,12 +51,7 @@ App = {
         console.log("2");
         }).then(function(result) {
           console.log("3");
-          return marriageInstance.proposalMatch.call(senderAccountId,receiverAccountId);
-        }).then(function(value){
-          if(value) {
-            $('.container-propose').hide();
-            $('.container-pending').show();
-          }
+          setTimeout(function() { App.checkForMatchingProposal(senderAccountId, receiverAccountId);}, 5000);
         }).catch(function(err) {
           console.log(err.message);
         });
@@ -62,13 +59,43 @@ App = {
     });
   },
 
-  handleUpdatePendingPage: function(){
-    // Recursive function ???
-    // If the marriage request matches, page loads the confirmation page
-    if(false){
+  checkForMatchingProposal: function(senderAccountId, receiverAccountId) {
+    $('.container-propose').hide();
+    App.contracts.Marriages.deployed().then(function(instance) {
+      marriageInstance = instance;
+      if (marriageInstance.proposalMatch.call(senderAccountId,receiverAccountId)) {
+        console.log("4");
+        App.handleUpdatePendingPage(senderAccountId, receiverAccountId);
+      }else {
+        console.log("5");
+        $('.container-propose').hide();
+        $('.container-pending').show();
+      }
+    });
+  },
+
+  handleUpdatePendingPage: function(senderAccountId, receiverAccountId) {
+    var marriageInstance;
+
+    if(true){
       $('.container-pending').hide();
       $('.container-confirmation').show();
     }
+
+    App.contracts.Marriages.deployed().then(function(instance) {
+      marriageInstance = instance;
+      return marriageInstance.marriageNew(senderAccountId,receiverAccountId);
+    }).then(function(result) {
+      console.log("6");
+      return marriageInstance.marriageNew.call(senderAccountId,receiverAccountId);
+    }).then(function(marId){
+      console.log("7")
+      console.log(marId);
+    }).catch(function(err) {
+      console.log(err.message);
+    });
+    // Recursive function ???
+    // If the marriage request matches, page loads the confirmation page
   },
 
   handleConfirmation: function(){
@@ -97,7 +124,7 @@ $(function() {
     App.initWeb3();
     App.handleGetMarried();
     App.handleSendProposal();
-    App.handleUpdatePendingPage();
+    // App.handleUpdatePendingPage();
     App.handleConfirmation();
     App.handleCertificate();
   });
