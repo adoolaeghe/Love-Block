@@ -32,10 +32,16 @@ contract Marriages {
 
   function marriageNew(address person1, address person2) public returns (bytes32) {
     require (_canMarry(person1, person2));
-    bytes32 marId = keccak256(person1, person2);
+    bytes32 marId = _createMarId(person1, person2);
     _newMarriageRecord(person1, marId);
     _newMarriageRecord(person2, marId);
     return marId;
+  }
+
+  function addPerson(bytes32 marId, address _person, bytes32 firstName, bytes32 middleName, bytes32 lastName, bytes32 dateOfBirth, uint id) public returns (bool) {
+    marriages[marId].people.push(Person({_address:_person, firstName:firstName, middleName:middleName, lastName:lastName, dateOfBirth:dateOfBirth, id:id}));
+    _marriageCompleteIfRequired(marId);
+    return true;
   }
 
   function marriageIsComplete(bytes32 marId) public returns (bool) {
@@ -48,12 +54,6 @@ contract Marriages {
 
   function marriageGetMarIdForPerson(address person) public returns (bytes32) {
     return marriageRecords[person];
-  }
-
-  function addPerson(bytes32 marId, address _person, bytes32 firstName, bytes32 middleName, bytes32 lastName, bytes32 dateOfBirth, uint id) public returns (bool) {
-    marriages[marId].people.push(Person({_address:_person, firstName:firstName, middleName:middleName, lastName:lastName, dateOfBirth:dateOfBirth, id:id}));
-    _marriageCompleteIfRequired(marId);
-    return true;
   }
 
   function timeStamp(bytes32 marId) public returns (uint256) {
@@ -84,6 +84,14 @@ contract Marriages {
     if(_personIsMarried(person2)) { return false; }
     if(!(proposalMatch(person1, person2) && proposalMatch(person2, person1))) { return false; }
     return true;
+  }
+
+  function _createMarId(address person1, address person2) private returns (bytes32) {
+    if (person1 > person2) {
+      return keccak256(person1, person2);
+    } else {
+      return keccak256(person2, person1);
+    }
   }
 
   function _marriageCompleteIfRequired(bytes32 marId) private returns (bool) {
