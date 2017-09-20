@@ -7,9 +7,11 @@ div(class="container-propose")
       div(class="propose-header1")
         br
         br
-        p(class="propose-header") Who do you want to get married to?
+        p(class="propose-header") Who would you like to get married to?
       br
-      form
-        input(type="text" name="name" placeholder="Your partner's blockchain address...")
-        br
-        button(class="sendProposalButton" type="submit") Send Proposal
+      form(class='form')
+        div 
+          p(class='p') Send Proposal
+        input(type="text" name="name" placeholder="Enter your partner's blockchain address...")
+        button(class="sendProposalButton" src='./assets/button.png')
+          img(class="button-image" src='./assets/button.png')

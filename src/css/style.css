@@ -1,9 +1,21 @@
 @import url('https://fonts.googleapis.com/css?family=Catamaran:300');
+@keyframes colorchange
+   {
+     0%   {background: #8924F9;}
+     50%  {background: #5d25f7;}
+     100%   {background: #8924F9;}
+   }
+ @-webkit-keyframes colorchange
+  {
+    0%   {background: #8924F9;}
+    50%  {background: #5d25f7;}
+    100%   {background: #8924F9;}
+  }
 
 body {
   text-align: center;
   margin: 0px;
-  background-color: #8924F9;
+  animation: colorchange 10s infinite;
 }
 
 div.nav-container {
@@ -14,13 +26,13 @@ div.nav-container {
 
 h1 {
   color: white;
-  font-family: 'Muli', sans-serif;
+  font-family: 'Catamaran', sans-serif;
   margin-left: 20px;
   margin-top: 10px;
 }
 
 .container-main {
-  background-color: #8924F9
+-webkit-animation: colorchange 10s infinite;
 }
 
 .article1-container, .article2-container {
@@ -60,24 +72,25 @@ display: none;
 }
 
 button.getMarriedButton {
-  background-color: #8924F9;
-  color: white;
+  background-color: white;
+  color: #8924F9;
   font-family: 'Catamaran', sans-serif;
   height: 60px;
   width: 200px;
   margin-left: 50%;
   margin-right: 50%;
   padding: 10 0 10 0;
-  border: 0.5px white solid;
+  border: 1px white solid;
   border-radius: 100px;
   letter-spacing: 2px;
   margin-top: 50px;
+  margin-left: 200px;
   font-size: 20px;
 }
 
 button.getMarriedButton:hover{
-  background-color: white;
-  color: #8924F9;
+  -webkit-animation: colorchange 10s infinite;
+  color: white;
 }
 
 .element1, .element2 {
@@ -106,14 +119,15 @@ input {
   box-sizing: border-box;
   margin: 8px 0;
   height: 40px;
-  border-radius: 15px;
-  background-color: #8924F9;
+  border-radius: 100px;
+  animation-iteration-count: infinite;
   border: 0.5px white solid;
-  color: white;
+  color: #8924F9;
 }
 
 input::placeholder {
-  color: white;
+  color: #5d25f7;
+  font-size: 13px;
 }
 
 label {
@@ -128,6 +142,7 @@ label {
   font-size: 100px;
   text-align: center;
   margin: 0;
+  width: 1000px;
 }
 
 .propose-header1 {
@@ -141,5 +156,25 @@ label {
 }
 
 .sendProposalButton {
+  background: none;
+  animation-iteration-count: infinite;
+  width: 70px;
+  border: none
+}
 
+img.button-image {
+  width: 100%
+}
+
+img.button-image:hover {
+  background: url('./assets/button.png');
+}
+
+form.form{
+  display: flex;
+}
+
+.p {
+  width: 200px;
+  margin-top: 12px;
 }
