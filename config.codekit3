@@ -119,6 +119,28 @@
 		"rFN": 0,
 		"uCM": 0
 		},
+	"\/src\/assets\/logo.png": {
+		"ft": 32768,
+		"iS": 260820,
+		"oA": 0,
+		"oAP": "\/src\/assets\/logo.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/src\/assets\/logo1.png": {
+		"ft": 32768,
+		"iS": 247605,
+		"oA": 0,
+		"oAP": "\/src\/assets\/logo1.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"\/src\/css\/style-min.css": {
 		"aP": 1,
 		"bl": 0,
@@ -138,6 +160,12 @@
 		"oAP": "\/src\/css\/style-min.css",
 		"oF": 1,
 		"oS": 3
+		},
+	"\/src\/index.html": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/src\/index.html",
+		"oF": 0
 		},
 	"\/src\/js\/app.js": {
 		"ft": 64,
