@@ -45,10 +45,6 @@ h1 {
   justify-content: center;
 }
 
-.article2-container {
-  background-color: lightgrey
-}
-
 p {
   color: white;
   font-family: 'Catamaran', sans-serif;
@@ -131,14 +127,14 @@ input::placeholder {
 }
 
 label {
-  font-family: 'Muli', sans-serif;
+  font-family: 'Catamaran', sans-serif;
   color: white;
   font-size: 15px;
 }
 
 .propose-header {
   flex: 1;
-  font-family: 'Muli', sans-serif;
+  font-family: 'Catamaran', sans-serif;
   font-size: 100px;
   text-align: center;
   margin: 0;
@@ -177,4 +173,24 @@ form.form{
 .p {
   width: 200px;
   margin-top: 12px;
+}
+
+.confirmation-header {
+  font-family: 'Catamaran', sans-serif;
+  text-align: center;
+  margin: 0px;
+  font-weight: lighter;
+  font-size: 30px;
+  letter-spacing: 1px;
+  font-weight: 200;
+}
+
+.question-header {
+  font-family: 'Catamaran', sans-serif;
+  text-align: center;
+  margin: 0px;
+  font-weight: lighter;
+  font-size: 30px;
+  letter-spacing: 1px;
+  font-weight: 200;
 }
