@@ -1,0 +1,43 @@
+// OUR AUDIENCE
+
+• Our employers
+• Makers stuff
+• Friends and family
+
+
+// OUR GOALS
+
+• Get hired
+• Get recognition and appreciation for our new skills / abilities
+
+
+// OUR MESSAGES
+
+• We are keen collaborators
+• We apply the right processes TDD / Agile
+• We are passionate about tech
+• We can teach ourselves everything
+• We are effective problem solvers
+
+
+// OUR SLIDES (HOW WE DELIVER OUR MESSAGES)
+
+1. COLLABORATION:
+Team charter, pairing, checking in with each other, sharing knowledge, ...
+
+2. PROCESS:
+TDD, stand ups and retros, pairing...
+
+3. PASSION ABOUT TECH:
+
+4. TEACHING OURSELVES:
+Please raise your hands if you think that Makers teach people how to code?
+Makers teach people how to teach themselves something they don't understand.
+In our final project we decided to push this idea even further and teach ourselves something no one really understands.
+(given Vitalik Buterin is not in this room)
+
+5. PROBLEM SOLVING:
+
+
+
+//

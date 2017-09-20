@@ -61,12 +61,15 @@ App = {
 
   checkForMatchingProposal: function(senderAccountId, receiverAccountId) {
     $('.container-propose').hide();
+
     App.contracts.Marriages.deployed().then(function(instance) {
       marriageInstance = instance;
-      if (marriageInstance.proposalMatch.call(senderAccountId,receiverAccountId)) {
+      return marriageInstance.proposalMatch.call(senderAccountId,receiverAccountId);
+    }).then(function(isMatching) {
+      if (isMatching) {
         console.log("4");
         App.handleUpdatePendingPage(senderAccountId, receiverAccountId);
-      }else {
+      } else {
         console.log("5");
         $('.container-propose').hide();
         $('.container-pending').show();
@@ -89,7 +92,7 @@ App = {
       console.log("6");
       return marriageInstance.marriageNew.call(senderAccountId,receiverAccountId);
     }).then(function(marId){
-      console.log("7")
+      console.log("7");
       console.log(marId);
     }).catch(function(err) {
       console.log(err.message);
@@ -111,9 +114,7 @@ App = {
       App.contracts.Marriages.deployed().then(function(instance) {
         marriageInstance = instance;
         console.log(_address);
-        // return marriageInstance.marriageNew.call(senderAccountId,receiverAccountId);
-        marId = 0xde60d40115a7a57fec7b86bdeb49f5813568623291eb60420cc5bf0fd62ddeed;
-        return marId
+        return marriageInstance.marriageGetMarIdForPerson.call(_address);
         }).then(function(marId){
           console.log("8")
           console.log(marId);
