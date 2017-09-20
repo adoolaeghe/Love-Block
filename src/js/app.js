@@ -151,14 +151,15 @@ App = {
     App.contracts.Marriages.deployed().then(function(instance) {
       marriageInstance = instance;
       timerId = setInterval(function() {
-        complete = marriageInstance.marriageIsComplete.call(marId);
         console.log('Requesting completion...');
-        console.log(complete)
-        if(complete) {
-          $('.container-complete-marriage').show();
-          console.log('Completion confirmed.');
-          clearInterval(timerId);
-        }
+        marriageInstance.marriageIsComplete.call(marId).then(function(isComplete) {
+          console.log(isComplete);
+          if(isComplete) {
+            $('.container-complete-marriage').show();
+            console.log('Completion confirmed.');
+            clearInterval(timerId);
+          }
+        });  
       }, 1000);
     });
   },
