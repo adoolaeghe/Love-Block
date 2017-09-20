@@ -104,23 +104,32 @@ App = {
         event.preventDefault();
         var data = $('form').serializeArray();
         console.log(data);
-        var _address = data[2].value;
-        var firstName = data[3].value;
-        var middleName = data[4].value;
-        var lastName = data[5].value;
-        var dateOfBirth = data[6].value;
-        var id = data[7].value;
 
-      App.contracts.Marriages.deployed().then(function(instance) {
-        marriageInstance = instance;
-        console.log(_address);
-        return marriageInstance.marriageGetMarIdForPerson.call(_address);
-        }).then(function(marId){
-          console.log("8")
-          console.log(marId);
-          App.handleAddPersonToMarriage(marId, _address, firstName, middleName, lastName, dateOfBirth, id);
-        }).catch(function(err) {
-          console.log(err.message);
+        web3.eth.getAccounts(function(error, accounts) {
+          if (error) {
+            console.log(error);
+          }
+          var senderAccountId = accounts[0];
+          console.log(senderAccountId);
+
+          var firstName = data[2].value;
+          var middleName = data[3].value;
+          var lastName = data[4].value;
+          var dateOfBirth = data[5].value;
+          var id = data[6].value;
+
+        App.contracts.Marriages.deployed().then(function(instance) {
+          marriageInstance = instance;
+          console.log(senderAccountId);
+
+          return marriageInstance.marriageGetMarIdForPerson.call(senderAccountId);
+          }).then(function(marId){
+            console.log("8")
+            console.log(marId);
+            App.handleAddPersonToMarriage(marId, senderAccountId, firstName, middleName, lastName, dateOfBirth, id);
+          }).catch(function(err) {
+            console.log(err.message);
+          });
         });
       });
     },

@@ -103,6 +103,12 @@
 		"oO": 0,
 		"oS": 1
 		},
+	"\/presentation_thoughts.txt": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/presentation_thoughts.txt",
+		"oF": 0
+		},
 	"\/README.md": {
 		"cS": 0,
 		"eF": 1,
