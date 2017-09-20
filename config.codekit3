@@ -191,6 +191,20 @@
 		"oF": 0,
 		"oS": 0
 		},
+	"\/src\/views\/certificate.html": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/src\/views\/certificate.html",
+		"oF": 0
+		},
+	"\/src\/views\/certificate.jade": {
+		"cOD": 1,
+		"ft": 512,
+		"oA": 1,
+		"oAP": "\/src\/views\/certificate.html",
+		"oF": 0,
+		"oS": 0
+		},
 	"\/src\/views\/completeMarriage.jade": {
 		"cOD": 1,
 		"ft": 512,

@@ -27,6 +27,10 @@ h1 {
   background-color: lightgrey
 }
 
+.container-marriage-id{
+  background-color: lightpink
+}
+
 p {
   margin: 0px
 }
@@ -38,6 +42,7 @@ p {
 .container-pending-marriage,
 .container-complete-marriage,
 .container-propose,
+.container-certificate,
 .container-congratulations {
 display: none;
 }
