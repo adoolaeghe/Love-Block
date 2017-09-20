@@ -63,15 +63,16 @@ button.getMarriedButton {
   background-color: #8924F9;
   color: white;
   font-family: 'Catamaran', sans-serif;
-  height: 30px;
-  width: 100px;
+  height: 60px;
+  width: 200px;
   margin-left: 50%;
   margin-right: 50%;
   padding: 10 0 10 0;
   border: 0.5px white solid;
   border-radius: 100px;
   letter-spacing: 2px;
-  margin-top: 30px;
+  margin-top: 50px;
+  font-size: 20px;
 }
 
 button.getMarriedButton:hover{
@@ -97,4 +98,48 @@ img.main-logo {
   animation-name: animation;
   animation-duration: 1s;
   animation-iteration-count: infinite;
+}
+
+input {
+  width: 40%;
+  padding: 5px 20px;
+  box-sizing: border-box;
+  margin: 8px 0;
+  height: 40px;
+  border-radius: 15px;
+  background-color: #8924F9;
+  border: 0.5px white solid;
+  color: white;
+}
+
+input::placeholder {
+  color: white;
+}
+
+label {
+  font-family: 'Muli', sans-serif;
+  color: white;
+  font-size: 15px;
+}
+
+.propose-header {
+  flex: 1;
+  font-family: 'Muli', sans-serif;
+  font-size: 100px;
+  text-align: center;
+  margin: 0;
+}
+
+.propose-header1 {
+  height: 500px;
+}
+
+.propose-form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.sendProposalButton {
+
 }
