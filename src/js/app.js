@@ -35,13 +35,15 @@ App = {
       var data = $('form').serializeArray();
       var receiverAccountId = data[0].value;
 
+      var marriageInstance;
+
       web3.eth.getAccounts(function(error, accounts) {
         if (error) {
           console.log(error);
         }
         var senderAccountId = accounts[0];
         console.log(senderAccountId);
-        
+
       App.contracts.Marriages.deployed().then(function(instance) {
         marriageInstance = instance;
         console.log("1");
@@ -49,12 +51,7 @@ App = {
         console.log("2");
         }).then(function(result) {
           console.log("3");
-          return marriageInstance.proposalMatch.call(senderAccountId,receiverAccountId);
-        }).then(function(value){
-          if(value) {
-            $('.container-propose').hide();
-            $('.container-pending').show();
-          }
+          setTimeout(function() { App.checkForMatchingProposal(senderAccountId, receiverAccountId);}, 3000);
         }).catch(function(err) {
           console.log(err.message);
         });
@@ -62,26 +59,89 @@ App = {
     });
   },
 
-  handleUpdatePendingPage: function(){
-    // Recursive function ???
-    // If the marriage request matches, page loads the confirmation page
-    if(false){
+  checkForMatchingProposal: function(senderAccountId, receiverAccountId) {
+    $('.container-propose').hide();
+    App.contracts.Marriages.deployed().then(function(instance) {
+      marriageInstance = instance;
+      if (marriageInstance.proposalMatch.call(senderAccountId,receiverAccountId)) {
+        console.log("4");
+        App.handleUpdatePendingPage(senderAccountId, receiverAccountId);
+      }else {
+        console.log("5");
+        $('.container-propose').hide();
+        $('.container-pending').show();
+      }
+    });
+  },
+
+  handleUpdatePendingPage: function(senderAccountId, receiverAccountId) {
+    var marriageInstance;
+
+    if(true){
       $('.container-pending').hide();
       $('.container-confirmation').show();
     }
+
+    App.contracts.Marriages.deployed().then(function(instance) {
+      marriageInstance = instance;
+      return marriageInstance.marriageNew(senderAccountId,receiverAccountId);
+    }).then(function(result) {
+      console.log("6");
+      return marriageInstance.marriageNew.call(senderAccountId,receiverAccountId);
+    }).then(function(marId){
+      console.log("7")
+      console.log(marId);
+    }).catch(function(err) {
+      console.log(err.message);
+    });
   },
 
-  handleConfirmation: function(){
-    // When a confirm button is triggered, page checks if the other has already confrimed or loads a pending page
-    // Redirect to successful or unsuccessful marriage.
+  handleGetPersonDetails() {
+      $('.personalDetailsButton').click(function(event){
+        event.preventDefault();
+        var data = $('form').serializeArray();
+        console.log(data);
+        var _address = data[2].value;
+        var firstName = data[3].value;
+        var middleName = data[4].value;
+        var lastName = data[5].value;
+        var dateOfBirth = data[6].value;
+        var id = data[7].value;
+
+      App.contracts.Marriages.deployed().then(function(instance) {
+        marriageInstance = instance;
+        console.log(_address);
+        // return marriageInstance.marriageNew.call(senderAccountId,receiverAccountId);
+        marId = 0xde60d40115a7a57fec7b86bdeb49f5813568623291eb60420cc5bf0fd62ddeed;
+        return marId
+        }).then(function(marId){
+          console.log("8")
+          console.log(marId);
+          App.handleAddPersonToMarriage(marId, _address, firstName, middleName, lastName, dateOfBirth, id);
+        }).catch(function(err) {
+          console.log(err.message);
+        });
+      });
+    },
+
+  handleAddPersonToMarriage(marId, _address, firstName, middleName, lastName, dateOfBirth, id) {
+    App.contracts.Marriages.deployed().then(function(instance) {
+      marriageInstance = instance;
+      marriageInstance.addPerson(marId, _address, firstName, middleName, lastName, dateOfBirth, id);
+      console.log("9, person has been added to the marriage");
+    });
+  },
+
+  handleClickYesIdo: function() {
     $('.confirmYesButton').click(function(event){
       event.preventDefault();
       $('.container-confirmation').hide();
-      $('.container-congratulation').show();
+      $('.container-form').show();
     });
     $('.confirmNoButton').click(function(event){
+      event.preventDefault();
       $('.container-confirmation').hide();
-      $('.container-cancellation').show();
+      $('.container-cancelled').show();
     });
   },
 
@@ -97,8 +157,8 @@ $(function() {
     App.initWeb3();
     App.handleGetMarried();
     App.handleSendProposal();
-    App.handleUpdatePendingPage();
-    App.handleConfirmation();
+    App.handleClickYesIdo();
+    App.handleGetPersonDetails();
     App.handleCertificate();
   });
 });

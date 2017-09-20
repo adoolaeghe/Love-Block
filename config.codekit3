@@ -4,7 +4,7 @@
 	{
 		"name": "Process All Remaining Files and Folders",
 		"stepType": 1,
-		"uuidString": "16821515-E097-475C-B228-3CE246DDE12A"
+		"uuidString": "1CD86851-2655-439E-A7A0-4C9BF0E4C21C"
 		}
 	],
 "creatorBuild": "25900",
@@ -17,9 +17,9 @@
 		},
 	"\/.jshintrc": {
 		"ft": 8192,
-		"oA": 2,
+		"oA": 1,
 		"oAP": "\/.jshintrc",
-		"oF": 0
+		"oF": 1
 		},
 	"\/_config.yml": {
 		"ft": 8192,
@@ -35,18 +35,10 @@
 		"oO": 0,
 		"oS": 1
 		},
-	"\/build\/contracts\/LoveBlock.json": {
+	"\/build\/contracts\/Marriages.json": {
 		"ft": 524288,
 		"oA": 1,
-		"oAP": "\/build\/contracts\/LoveBlock-min.json",
-		"oF": 0,
-		"oO": 0,
-		"oS": 1
-		},
-	"\/build\/contracts\/Marriage.json": {
-		"ft": 524288,
-		"oA": 1,
-		"oAP": "\/build\/contracts\/Marriage-min.json",
+		"oAP": "\/build\/contracts\/Marriages-min.json",
 		"oF": 0,
 		"oO": 0,
 		"oS": 1
@@ -59,36 +51,42 @@
 		"oO": 0,
 		"oS": 1
 		},
-	"\/contracts\/Marriage.sol": {
+	"\/contracts\/Marriages.sol": {
 		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/contracts\/Marriage.sol",
-		"oF": 0
+		"oA": 1,
+		"oAP": "\/contracts\/Marriages.sol",
+		"oF": 1
 		},
 	"\/contracts\/Migrations.sol": {
 		"ft": 8192,
-		"oA": 2,
+		"oA": 1,
 		"oAP": "\/contracts\/Migrations.sol",
-		"oF": 0
+		"oF": 1
+		},
+	"\/domain.txt": {
+		"ft": 8192,
+		"oA": 1,
+		"oAP": "\/domain.txt",
+		"oF": 1
 		},
 	"\/migrations\/1_initial_migration.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 1,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "\/migrations\/1_initial_migration-min.js",
-		"oF": 0,
-		"sC": 3,
+		"oF": 1,
+		"sC": 1,
 		"tS": 0
 		},
 	"\/migrations\/2_deploy_contracts.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 1,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "\/migrations\/2_deploy_contracts-min.js",
-		"oF": 0,
-		"sC": 3,
+		"oF": 1,
+		"sC": 1,
 		"tS": 0
 		},
 	"\/node_modules": {
@@ -123,14 +121,24 @@
 		"rFN": 0,
 		"uCM": 0
 		},
-	"\/src\/css\/style.css": {
+	"\/src\/css\/style-min.css": {
 		"aP": 1,
 		"bl": 0,
 		"ft": 16,
 		"ma": 0,
 		"oA": 0,
-		"oAP": "\/src\/css\/style-min.css",
+		"oAP": "\/src\/css\/style-min-min.css",
 		"oF": 0,
+		"oS": 3
+		},
+	"\/src\/css\/style.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/src\/css\/style-min.css",
+		"oF": 1,
 		"oS": 3
 		},
 	"\/src\/index.html": {
@@ -143,30 +151,30 @@
 		"ft": 64,
 		"ma": 0,
 		"mi": 1,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "\/src\/js\/app-min.js",
-		"oF": 0,
-		"sC": 3,
+		"oF": 1,
+		"sC": 1,
 		"tS": 0
 		},
 	"\/src\/js\/truffle-contract.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 1,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "\/src\/js\/truffle-contract-min.js",
-		"oF": 0,
-		"sC": 3,
+		"oF": 1,
+		"sC": 1,
 		"tS": 0
 		},
 	"\/src\/js\/web3.min.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 1,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "\/src\/js\/web3.min-min.js",
-		"oF": 0,
-		"sC": 3,
+		"oF": 1,
+		"sC": 1,
 		"tS": 0
 		},
 	"\/src\/views\/cancelled.jade": {
@@ -193,12 +201,20 @@
 		"oF": 0,
 		"oS": 0
 		},
+	"\/src\/views\/form.jade": {
+		"cOD": 1,
+		"ft": 512,
+		"oA": 1,
+		"oAP": "\/src\/views\/form.html",
+		"oF": 1,
+		"oS": 0
+		},
 	"\/src\/views\/index.jade": {
 		"cOD": 1,
 		"ft": 512,
 		"oA": 0,
-		"oAP": "\/src\/views\/index.html",
-		"oF": 0,
+		"oAP": "\/src\/index.html",
+		"oF": 2,
 		"oS": 0
 		},
 	"\/src\/views\/main.jade": {
@@ -225,10 +241,10 @@
 		"oF": 0,
 		"oS": 0
 		},
-	"\/test\/TestMarriage.sol": {
+	"\/test\/TestMarriages.sol": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/test\/TestMarriage.sol",
+		"oAP": "\/test\/TestMarriages.sol",
 		"oF": 0
 		},
 	"\/truffle.js": {
@@ -238,7 +254,7 @@
 		"oA": 0,
 		"oAP": "\/truffle-min.js",
 		"oF": 0,
-		"sC": 3,
+		"sC": 1,
 		"tS": 0
 		}
 	},
@@ -247,10 +263,11 @@
 "manualImportLinks": {
 	},
 "projectAttributes": {
-	"creationDate": 527169100,
+	"creationDate": 527418394,
 	"displayValue": "Love-Block",
 	"displayValueWasSetByUser": 0,
-	"iconImageName": "brackets_green"
+	"iconImageName": "meme-punDog",
+	"lastBuiltDate": 527526302
 	},
 "projectSettings": {
 	"abortBuildOnError": 1,
@@ -1052,7 +1069,7 @@
 			},
 		"no-extra-parens": {
 			"active": 0,
-			"optionString": "'all', {'conditionalAssign': false, 'returnAssign': false, 'nestedBinaryExpressions': false, 'ignoreJSX': 'none', 'enforceForArrowConditionals': false}"
+			"optionString": "'all', {'conditionalAssign': false, 'returnAssign': false, 'nestedBinaryExpressions': false, 'ignoreJSX': 'none'}"
 			},
 		"no-extra-semi": {
 			"active": 1,
@@ -1300,7 +1317,7 @@
 			},
 		"no-sync": {
 			"active": 0,
-			"optionString": "{'allowAtRootLevel': false}"
+			"optionString": ""
 			},
 		"no-tabs": {
 			"active": 0,
@@ -1324,7 +1341,7 @@
 			},
 		"no-trailing-spaces": {
 			"active": 0,
-			"optionString": "{'skipBlankLines': false, 'ignoreComments': false}"
+			"optionString": "{'skipBlankLines': false}"
 			},
 		"no-undef": {
 			"active": 1,
@@ -1340,7 +1357,7 @@
 			},
 		"no-underscore-dangle": {
 			"active": 0,
-			"optionString": "{'allow': [], 'allowAfterThis': false, 'allowAfterSuper': false, 'enforceInMethodNames': false}"
+			"optionString": "{'allow': [], 'allowAfterThis': false, 'allowAfterSuper': false}"
 			},
 		"no-unexpected-multiline": {
 			"active": 1,
@@ -2057,7 +2074,7 @@
 		"autoOutputPathStyle": 0,
 		"createSourceMap": 0,
 		"minifyOutput": 1,
-		"syntaxCheckerStyle": 3,
+		"syntaxCheckerStyle": 1,
 		"transpilerStyle": 0
 		},
 	"languageDefaultsJSON": {
