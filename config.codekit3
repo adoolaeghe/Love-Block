@@ -191,6 +191,14 @@
 		"oF": 0,
 		"oS": 0
 		},
+	"\/src\/views\/completeMarriage.jade": {
+		"cOD": 1,
+		"ft": 512,
+		"oA": 1,
+		"oAP": "\/src\/views\/completeMarriage.html",
+		"oF": 0,
+		"oS": 0
+		},
 	"\/src\/views\/confirmation.jade": {
 		"cOD": 1,
 		"ft": 512,

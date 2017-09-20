@@ -32,9 +32,11 @@ p {
 }
 
 .container-cancelled,
-.container-pending,
+.container-pending-proposal,
 .container-form,
 .container-confirmation,
+.container-pending-marriage,
+.container-complete-marriage,
 .container-propose,
 .container-congratulations {
 display: none;

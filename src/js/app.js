@@ -144,7 +144,8 @@ App = {
   },
 
   handleCompletionPendingPage: function(marId) {
-    // Show pending page partial
+    $('.container-form').hide();
+    $('.container-pending-marriage').show();
     var complete = false;
 
     App.contracts.Marriages.deployed().then(function(instance) {
@@ -152,7 +153,9 @@ App = {
       timerId = setInterval(function() {
         complete = marriageInstance.marriageIsComplete.call(marId);
         console.log('Requesting completion...');
+        console.log(complete)
         if(complete) {
+          $('.container-complete-marriage').show();
           console.log('Completion confirmed.');
           clearInterval(timerId);
         }
