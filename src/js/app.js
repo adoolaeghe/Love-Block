@@ -72,7 +72,7 @@ App = {
       } else {
         console.log("5");
         $('.container-propose').hide();
-        $('.container-pending').show();
+        $('.container-pending-proposal').show();
       }
     });
   },
@@ -81,7 +81,7 @@ App = {
     var marriageInstance;
 
     if(true){
-      $('.container-pending').hide();
+      $('.container-pending-proposal').hide();
       $('.container-confirmation').show();
     }
 

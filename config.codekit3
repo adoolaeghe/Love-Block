@@ -231,11 +231,19 @@
 		"oF": 0,
 		"oS": 0
 		},
-	"\/src\/views\/pending.jade": {
+	"\/src\/views\/pendingMarriageCompletion.jade": {
 		"cOD": 1,
 		"ft": 512,
 		"oA": 1,
-		"oAP": "\/src\/views\/pending.html",
+		"oAP": "\/src\/views\/pendingMarriageCompletion.html",
+		"oF": 0,
+		"oS": 0
+		},
+	"\/src\/views\/pendingProposal.jade": {
+		"cOD": 1,
+		"ft": 512,
+		"oA": 1,
+		"oAP": "\/src\/views\/pendingProposal.html",
 		"oF": 0,
 		"oS": 0
 		},
