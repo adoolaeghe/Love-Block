@@ -124,7 +124,7 @@ App = {
 
           return marriageInstance.marriageGetMarIdForPerson.call(senderAccountId);
           }).then(function(marId){
-            console.log("8")
+            console.log("8");
             console.log(marId);
             App.handleAddPersonToMarriage(marId, senderAccountId, firstName, middleName, lastName, dateOfBirth, id);
           }).catch(function(err) {
@@ -136,10 +136,17 @@ App = {
 
   handleAddPersonToMarriage(marId, _address, firstName, middleName, lastName, dateOfBirth, id) {
     App.contracts.Marriages.deployed().then(function(instance) {
-      marriageInstance = instance;
-      marriageInstance.addPerson(marId, _address, firstName, middleName, lastName, dateOfBirth, id);
-      console.log("9, person has been added to the marriage");
-      App.handleCompletionPendingPage(marId);
+      instance.addPerson(marId, _address, firstName, middleName, lastName, dateOfBirth, id).then(function(result) {
+        console.log("9, person has been added to the marriage");
+        console.log("Retreiving people names...");
+        instance.marriageGetPersonFirstName.call(marId, 0).then(function(name) {
+          console.log(web3.toAscii(name));
+        });
+        instance.marriageGetPersonFirstName.call(marId, 1).then(function(name) {
+          console.log(web3.toAscii(name));
+        });
+        App.handleCompletionPendingPage(marId);
+      });
     });
   },
 
@@ -148,20 +155,36 @@ App = {
     $('.container-pending-marriage').show();
     var complete = false;
 
-    App.contracts.Marriages.deployed().then(function(instance) {
-      marriageInstance = instance;
-      timerId = setInterval(function() {
-        console.log('Requesting completion...');
-        marriageInstance.marriageIsComplete.call(marId).then(function(isComplete) {
+    timerId = setInterval(function() {
+      App.contracts.Marriages.deployed().then(function(marriages) {
+        console.log('Requesting completion for marId:');
+        console.log(marId);
+        marriages.marriageIsComplete.call(marId).then(function(isComplete) {
           console.log(isComplete);
           if(isComplete) {
             $('.container-complete-marriage').show();
             console.log('Completion confirmed.');
             clearInterval(timerId);
           }
-        });  
-      }, 1000);
-    });
+        });
+      });
+    }, 3000);
+
+    // App.contracts.Marriages.deployed().then(function(instance) {
+    //   marriageInstance = instance;
+    //   timerId = setInterval(function() {
+    //     console.log('Requesting completion for marId:');
+    //     console.log(marId);
+    //     marriageInstance.marriageIsComplete.call(marId).then(function(isComplete) {
+    //       console.log(isComplete);
+    //       if(isComplete) {
+    //         $('.container-complete-marriage').show();
+    //         console.log('Completion confirmed.');
+    //         clearInterval(timerId);
+    //       }
+    //     });
+    //   }, 1000);
+    // });
   },
 
   handleClickYesIdo: function() {
