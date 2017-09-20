@@ -110,8 +110,10 @@ App = {
 
       App.contracts.Marriages.deployed().then(function(instance) {
         marriageInstance = instance;
-        console.log(_address)
-        return marriageInstance.marriageNew.call(senderAccountId,receiverAccountId);
+        console.log(_address);
+        // return marriageInstance.marriageNew.call(senderAccountId,receiverAccountId);
+        marId = 0xde60d40115a7a57fec7b86bdeb49f5813568623291eb60420cc5bf0fd62ddeed;
+        return marId
         }).then(function(marId){
           console.log("8")
           console.log(marId);
@@ -126,7 +128,7 @@ App = {
     App.contracts.Marriages.deployed().then(function(instance) {
       marriageInstance = instance;
       marriageInstance.addPerson(marId, _address, firstName, middleName, lastName, dateOfBirth, id);
-      console.log("9");
+      console.log("9, person has been added to the marriage");
     });
   },
 
@@ -139,11 +141,9 @@ App = {
     $('.confirmNoButton').click(function(event){
       event.preventDefault();
       $('.container-confirmation').hide();
-      $('.container-cancellation').show();
+      $('.container-cancelled').show();
     });
   },
-
-
 
   handleCertificate: function(){
     $('.downloadCertificate').click(function(event){
