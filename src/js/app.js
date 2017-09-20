@@ -139,6 +139,24 @@ App = {
       marriageInstance = instance;
       marriageInstance.addPerson(marId, _address, firstName, middleName, lastName, dateOfBirth, id);
       console.log("9, person has been added to the marriage");
+      App.handleCompletionPendingPage(marId);
+    });
+  },
+
+  handleCompletionPendingPage: function(marId) {
+    // Show pending page partial
+    var complete = false;
+
+    App.contracts.Marriages.deployed().then(function(instance) {
+      marriageInstance = instance;
+      timerId = setInterval(function() {
+        complete = marriageInstance.marriageIsComplete.call(marId);
+        console.log('Requesting completion...');
+        if(complete) {
+          console.log('Completion confirmed.');
+          clearInterval(timerId);
+        }
+      }, 1000);
     });
   },
 
