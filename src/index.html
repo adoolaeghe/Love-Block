@@ -10,14 +10,15 @@
     <div class="nav-container">     
       <h1>LoveBlock</h1>
     </div>
-    <div class="article1-container"><img src="">
-      <p>What is LoveBlock?</p><img src="">
-    </div>
-    <div class="article2-container">
-      <p>Explaining LoveBlock for Noobs</p>
-    </div>
-    <div class="article3-container"><a href="propose.html" Propose page></a>
-      <button class="getMarriedButton">Get married</button>
+    <div class="article1-container">
+      <div class="element1">
+        <p>Cement your commitment on the blockchain.</p><br>
+        <p>Get chained today.</p>
+        <button class="getMarriedButton">Get married</button>
+      </div>
+      <div class="element2">
+        <div> <img src="./assets/logo.png" class="main-logo"></div>
+      </div>
     </div>
   </div>
   <div class="container-propose">
@@ -25,28 +26,35 @@
       <h1>LoveBlock</h1><img>
     </div>
     <div class="article1-container">
-      <form>
-        <label>Who do you want to get married to?</label>
-        <input type="text" name="name" placeholder="Blockhain id">
-        <label> Tell us why?</label>
-        <input type="text" name="reason" placeholder="Your reason...">
-        <button type="submit" class="sendProposalButton">Send Proposal</button>
-      </form>
+      <div class="proposal-confirmation">
+        <div class="propose-form-container">
+          <div class="propose-header1"><br><br>
+            <p class="propose-header">Who would you like to get married to?</p>
+          </div><br>
+          <form class="form">
+            <div>
+              <p class="p">Send Proposal</p>
+            </div>
+            <input type="text" name="name" placeholder="Enter your partner's blockchain address..." maxlength="42">
+            <button type="image" src="./assets/button.png" class="sendProposalButton"><img src="./assets/button.png" class="button-image"></button>
+          </form>
+        </div>
+      </div>
     </div>
   </div>
   <div class="container-form">
     <h3>Your MarId is ....</h3>
     <form> 
       <label>First Name</label>
-      <input type="text" name="firstName" placeholder="First Name">
+      <input type="text" name="firstName" placeholder="First Name" class="input-form">
       <label>Middle Name</label>
-      <input type="text" name="middleName" placeholder="Middle Name">
+      <input type="text" name="middleName" placeholder="Middle Name" class="input-form">
       <label>Last Name</label>
-      <input type="text" name="lastName" placeholder="Last Name">
+      <input type="text" name="lastName" placeholder="Last Name" class="input-form">
       <label>Date of Birth</label>
-      <input type="text" name="DOB" placeholder="Date of Birth">
+      <input type="text" name="DOB" placeholder="Date of Birth" class="input-form">
       <label>id</label>
-      <input type="text" name="id" placeholder="e.g Passport id">
+      <input type="text" name="id" placeholder="e.g Passport id" class="input-form">
       <button type="submit" class="personalDetailsButton">Add personal details</button>
     </form>
   </div>
@@ -60,16 +68,17 @@
       <h1>LoveBlock</h1><img>
     </div>
     <div class="article1-container">
-      <p>Hurray, we have found a matching request!</p>
-    </div>
-    <div class="container-marriage-id"></div>
-    <div class="article2-container">
-      <p>Do you,... take ... to be your lifelong blockchain partner?</p>
-    </div>
-    <div class="article3-container">
-      <div class="button-confirmation">
-        <button class="confirmYesButton">Yes, I do</button>
-        <button class="confirmNoButton">No, I don't</button>
+      <div class="proposal-container">
+        <div>
+        <div class="container-marriage-id"></div>
+          <p class="confirmation-header">We have found a matching request!</p>
+        </div><br>
+        <div>
+          <p class="question-header">Do you take your partner to be your lifelong blockchain partner?</p>
+        </div><br>
+        <div class="button-confirmation">
+          <button class="confirmYesButton">Yes, I do</button>
+        </div>
       </div>
     </div>
   </div>

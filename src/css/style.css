@@ -1,18 +1,38 @@
+@import url('https://fonts.googleapis.com/css?family=Catamaran:300');
+@keyframes colorchange
+   {
+     0%   {background: #8924F9;}
+     50%  {background: #5d25f7;}
+     100%   {background: #8924F9;}
+   }
+ @-webkit-keyframes colorchange
+  {
+    0%   {background: #8924F9;}
+    50%  {background: #5d25f7;}
+    100%   {background: #8924F9;}
+  }
+
 body {
   text-align: center;
   margin: 0px;
-
+  animation: colorchange 10s infinite;
 }
 
 div.nav-container {
   display: flex;
   height: 100px;
-  background-color: grey;
-  justify-content: center;
+
 }
 
 h1 {
   color: white;
+  font-family: 'Catamaran', sans-serif;
+  margin-left: 20px;
+  margin-top: 10px;
+}
+
+.container-main {
+-webkit-animation: colorchange 10s infinite;
 }
 
 .article1-container, .article2-container {
@@ -20,11 +40,13 @@ h1 {
 }
 
 .article1-container {
-  background-color: lightpink
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
-.article2-container {
-  background-color: lightgrey
+.question-header {
+  height: 300px;
 }
 
 .container-marriage-id{
@@ -32,7 +54,16 @@ h1 {
 }
 
 p {
-  margin: 0px
+  color: white;
+  font-family: 'Catamaran', sans-serif;
+  font-weight: lighter;
+  font-size: 30px;
+  text-align: left;
+  margin: 0 0 0 0;
+  margin-left: 200px;
+  letter-spacing: 1px;
+  line-height: 1.1;
+  font-weight: 200;
 }
 
 .container-cancelled,
@@ -45,4 +76,173 @@ p {
 .container-certificate,
 .container-congratulations {
 display: none;
+}
+
+button.getMarriedButton {
+  background-color: white;
+  color: #8924F9;
+  font-family: 'Catamaran', sans-serif;
+  height: 60px;
+  width: 200px;
+  margin-left: 50%;
+  margin-right: 50%;
+  padding: 10 0 10 0;
+  border: 1px white solid;
+  border-radius: 100px;
+  letter-spacing: 2px;
+  margin-top: 50px;
+  margin-left: 200px;
+  font-size: 20px;
+}
+
+button.getMarriedButton:hover{
+  -webkit-animation: colorchange 10s infinite;
+  color: white;
+}
+
+.element1, .element2 {
+  display: flex;
+  flex: 0.5;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@keyframes animation {
+  0% {width: 75%;}
+  50% {width: 80%;}
+  100% {width: 75%;}
+}
+
+img.main-logo {
+  width: 70%;
+  animation-name: animation;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+}
+
+input {
+  width: 40%;
+  padding: 5px 20px;
+  box-sizing: border-box;
+  margin: 8px 0;
+  height: 40px;
+  border-radius: 100px;
+  animation-iteration-count: infinite;
+  border: 0.5px white solid;
+  color: #8924F9;
+}
+
+input::placeholder {
+  color: #5d25f7;
+  font-size: 13px;
+}
+
+label {
+  font-family: 'Catamaran', sans-serif;
+  color: white;
+  font-size: 15px;
+}
+
+.propose-header {
+  flex: 1;
+  font-family: 'Catamaran', sans-serif;
+  font-size: 100px;
+  text-align: center;
+  margin: 0;
+  width: 1000px;
+}
+
+.propose-header1 {
+  height: 500px;
+}
+
+.propose-form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.sendProposalButton {
+  background: none;
+  animation-iteration-count: infinite;
+  width: 70px;
+  border: none
+}
+
+img.button-image {
+  width: 100%
+}
+
+img.image-finger {
+  height: 100px
+}
+
+img.button-image:hover {
+  background: url('./assets/button.png');
+}
+
+form.form{
+  display: flex;
+}
+
+.p {
+  width: 200px;
+  margin-top: 12px;
+}
+
+.confirmation-header {
+  font-family: 'Catamaran', sans-serif;
+  text-align: center;
+  margin: 0px;
+  font-weight: lighter;
+  font-size: 30px;
+  letter-spacing: 1px;
+  font-weight: 200;
+}
+
+.question-header {
+  font-family: 'Catamaran', sans-serif;
+  text-align: center;
+  margin: 0px;
+  font-weight: lighter;
+  font-size: 30px;
+  letter-spacing: 1px;
+  font-weight: 200;
+}
+
+.confirmYesButton, .confirmNoButton {
+  color: white;
+  font-family: 'Catamaran', sans-serif;
+  height: 60px;
+  width: 300px;
+  padding: 10 0 10 0;
+  border: 1px white solid;
+  border-radius: 100px;
+  letter-spacing: 2px;
+  font-size: 20px;
+  margin: 20px;
+}
+
+.confirmYesButton {
+  background-color: #33c0d4;
+}
+
+.confirmNoButton {
+  background-color: #eb347b;
+}
+
+.button-confirmation {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin-right: 20px;
+}
+
+.form1 {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-form {
+  width: 300px
 }

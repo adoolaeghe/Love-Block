@@ -117,15 +117,48 @@
 		"ema": 1,
 		"eSQ": 1,
 		"ft": 4096,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "\/README.html",
-		"oF": 0,
+		"oF": 1,
 		"oFM": 0,
 		"oS": 0,
 		"pHT": 0,
 		"pME": 1,
 		"rFN": 0,
 		"uCM": 0
+		},
+	"\/src\/assets\/button.png": {
+		"ft": 32768,
+		"iS": 21901,
+		"oA": 0,
+		"oAP": "\/src\/assets\/button.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/src\/assets\/finger.png": {
+		"ft": 32768,
+		"iS": 18216,
+		"oA": 0,
+		"oAP": "\/src\/assets\/finger.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/src\/assets\/logo.png": {
+		"ft": 32768,
+		"iS": 40130,
+		"oA": 0,
+		"oAP": "\/src\/assets\/logo.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/src\/css\/style-min.css": {
 		"aP": 1,
@@ -279,17 +312,17 @@
 		},
 	"\/test\/TestMarriages.sol": {
 		"ft": 8192,
-		"oA": 2,
+		"oA": 1,
 		"oAP": "\/test\/TestMarriages.sol",
-		"oF": 0
+		"oF": 1
 		},
 	"\/truffle.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 1,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "\/truffle-min.js",
-		"oF": 0,
+		"oF": 1,
 		"sC": 1,
 		"tS": 0
 		}

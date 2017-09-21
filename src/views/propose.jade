@@ -3,9 +3,16 @@ div(class="container-propose")
     h1 LoveBlock
     img
   div(class="article1-container")
-    form
-      label Who do you want to get married to?
-      input(type="text" name="name" placeholder="Blockhain id") 
-      label  Tell us why?
-      input(type="text" name="reason" placeholder="Your reason...")
-      button(class="sendProposalButton" type="submit") Send Proposal
+    div(class='proposal-confirmation')
+      div(class="propose-form-container")
+        div(class="propose-header1")
+          br
+          br
+          p(class="propose-header") Who would you like to get married to?
+        br
+        form(class='form')
+          div
+            p(class='p') Send Proposal
+          input(type="text" name="name" placeholder="Enter your partner's blockchain address..." maxlength="42")
+          button(type="image" src='./assets/button.png' class="sendProposalButton")
+            img(class="button-image" src='./assets/button.png')

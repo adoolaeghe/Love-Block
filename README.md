@@ -1,6 +1,32 @@
 # Love Block Project
 
-## Specifications:
+Marriage is an outdated institution....but not any more!!!
+Do you want to get chained today?
+
+I do.
+
+## How to use
+First install:
+Node.js
+Metamask (https://metamask.io/)
+
+Once testrpc is installed, it should be run in a separate terminal window. It will print out 10 pre-funded accounts with a 12 word mnemonic that will allow you to regenerate these.
+
+```
+git clone https://github.com/adoolaeghe/Love-Block
+cd Love-Block
+npm install -g ethereumjs-testrpc
+npm install -g truffle
+testrpc # in a separate terminal window
+testrpc -m "testrpc mneumonic"
+truffle migrate
+...
+```
+
+To run the tests:
+```
+truffle test
+```
 
 ## User Stories
 
@@ -16,7 +42,21 @@ I would like to see a confirmation of my marriage.
 As a user,
 So that I choose between two options,
 I would like to be able to choose between yes and no.
+
+As a user,
+So that I can show evidence of my marriage,
+I would like to receive a certificate once my marriage has been confirmed.
 ```
+
+## Tech Stack
+
+Ethereum/Testrpc
+Truffle
+Solidity
+Javascript
+Jade
+Web3.js
+
 ## Team charter
 
 * Simplicity
