@@ -181,7 +181,6 @@
       "address": "0xb72a5931337f02f399249f713c8390e521ad3e05",
       "updated_at": 1505923770484
     },
-
     "1505985572445": {
       "events": {},
       "links": {},
@@ -235,8 +234,14 @@
       "links": {},
       "address": "0xdd5354eb9b58872ae5af3228de5916bc97c910cf",
       "updated_at": 1505996467576
+    },
+    "1506001551024": {
+      "events": {},
+      "links": {},
+      "address": "0xba043d2a7568a4d679a047ed5acc670914129dbe",
+      "updated_at": 1506001595035
     }
   },
   "schema_version": "0.0.5",
-  "updated_at": 1505996467576
+  "updated_at": 1506001595035
 }
