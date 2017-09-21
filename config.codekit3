@@ -103,6 +103,12 @@
 		"oO": 0,
 		"oS": 1
 		},
+	"\/presentation_thoughts.txt": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/presentation_thoughts.txt",
+		"oF": 0
+		},
 	"\/README.md": {
 		"cS": 0,
 		"eF": 1,
@@ -185,6 +191,28 @@
 		"oF": 0,
 		"oS": 0
 		},
+	"\/src\/views\/certificate.html": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/src\/views\/certificate.html",
+		"oF": 0
+		},
+	"\/src\/views\/certificate.jade": {
+		"cOD": 1,
+		"ft": 512,
+		"oA": 1,
+		"oAP": "\/src\/views\/certificate.html",
+		"oF": 0,
+		"oS": 0
+		},
+	"\/src\/views\/completeMarriage.jade": {
+		"cOD": 1,
+		"ft": 512,
+		"oA": 1,
+		"oAP": "\/src\/views\/completeMarriage.html",
+		"oF": 0,
+		"oS": 0
+		},
 	"\/src\/views\/confirmation.jade": {
 		"cOD": 1,
 		"ft": 512,
@@ -225,11 +253,19 @@
 		"oF": 0,
 		"oS": 0
 		},
-	"\/src\/views\/pending.jade": {
+	"\/src\/views\/pendingMarriageCompletion.jade": {
 		"cOD": 1,
 		"ft": 512,
 		"oA": 1,
-		"oAP": "\/src\/views\/pending.html",
+		"oAP": "\/src\/views\/pendingMarriageCompletion.html",
+		"oF": 0,
+		"oS": 0
+		},
+	"\/src\/views\/pendingProposal.jade": {
+		"cOD": 1,
+		"ft": 512,
+		"oA": 1,
+		"oAP": "\/src\/views\/pendingProposal.html",
 		"oF": 0,
 		"oS": 0
 		},
