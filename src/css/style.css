@@ -2,13 +2,13 @@
 @keyframes colorchange
    {
      0%   {background: #8924F9;}
-     50%  {background: #5d25f7;}
+     50%  {background: #8924F9;}
      100%   {background: #8924F9;}
    }
  @-webkit-keyframes colorchange
   {
     0%   {background: #8924F9;}
-    50%  {background: #5d25f7;}
+    50%  {background: #8924F9;}
     100%   {background: #8924F9;}
   }
 
