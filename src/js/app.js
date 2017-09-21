@@ -93,7 +93,7 @@ App = {
       return marriageInstance.marriageNew.call(senderAccountId,receiverAccountId);
     }).then(function(marId){
       console.log("7");
-      var updatePage = $(".container-marriage-id");
+      var updatePage = $(".container-m-id");
       updatePage.append("Your marId is " + marId);
       console.log(marId);
     }).catch(function(err) {
