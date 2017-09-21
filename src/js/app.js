@@ -168,6 +168,7 @@ App = {
           if(isComplete) {
             $('.container-complete-marriage').show();
             console.log('Completion confirmed.');
+            App.handleCertificate();
             clearInterval(timerId);
           }
         });
@@ -245,6 +246,8 @@ App = {
       });
     });
     // Show/hide the relevant views and render the data obtained above
+
+
   },
 
   handleCertificate: function(){
