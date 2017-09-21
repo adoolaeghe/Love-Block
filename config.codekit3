@@ -7,7 +7,7 @@
 		"uuidString": "1CD86851-2655-439E-A7A0-4C9BF0E4C21C"
 		}
 	],
-"creatorBuild": "25849",
+"creatorBuild": "25900",
 "files": {
 	"\/.gitignore": {
 		"ft": 8192,
@@ -71,6 +71,7 @@
 		},
 	"\/migrations\/1_initial_migration.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 1,
 		"oA": 1,
 		"oAP": "\/migrations\/1_initial_migration-min.js",
@@ -80,6 +81,7 @@
 		},
 	"\/migrations\/2_deploy_contracts.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 1,
 		"oA": 1,
 		"oAP": "\/migrations\/2_deploy_contracts-min.js",
@@ -100,6 +102,12 @@
 		"oF": 0,
 		"oO": 0,
 		"oS": 1
+		},
+	"\/presentation_thoughts.txt": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/presentation_thoughts.txt",
+		"oF": 0
 		},
 	"\/README.md": {
 		"cS": 0,
@@ -180,6 +188,7 @@
 		},
 	"\/src\/js\/app.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 1,
 		"oA": 1,
 		"oAP": "\/src\/js\/app-min.js",
@@ -189,6 +198,7 @@
 		},
 	"\/src\/js\/truffle-contract.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 1,
 		"oA": 1,
 		"oAP": "\/src\/js\/truffle-contract-min.js",
@@ -198,6 +208,7 @@
 		},
 	"\/src\/js\/web3.min.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 1,
 		"oA": 1,
 		"oAP": "\/src\/js\/web3.min-min.js",
@@ -210,6 +221,28 @@
 		"ft": 512,
 		"oA": 1,
 		"oAP": "\/src\/views\/cancelled.html",
+		"oF": 0,
+		"oS": 0
+		},
+	"\/src\/views\/certificate.html": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/src\/views\/certificate.html",
+		"oF": 0
+		},
+	"\/src\/views\/certificate.jade": {
+		"cOD": 1,
+		"ft": 512,
+		"oA": 1,
+		"oAP": "\/src\/views\/certificate.html",
+		"oF": 0,
+		"oS": 0
+		},
+	"\/src\/views\/completeMarriage.jade": {
+		"cOD": 1,
+		"ft": 512,
+		"oA": 1,
+		"oAP": "\/src\/views\/completeMarriage.html",
 		"oF": 0,
 		"oS": 0
 		},
@@ -234,7 +267,7 @@
 		"ft": 512,
 		"oA": 1,
 		"oAP": "\/src\/views\/form.html",
-		"oF": 0,
+		"oF": 1,
 		"oS": 0
 		},
 	"\/src\/views\/index.jade": {
@@ -253,11 +286,19 @@
 		"oF": 0,
 		"oS": 0
 		},
-	"\/src\/views\/pending.jade": {
+	"\/src\/views\/pendingMarriageCompletion.jade": {
 		"cOD": 1,
 		"ft": 512,
 		"oA": 1,
-		"oAP": "\/src\/views\/pending.html",
+		"oAP": "\/src\/views\/pendingMarriageCompletion.html",
+		"oF": 0,
+		"oS": 0
+		},
+	"\/src\/views\/pendingProposal.jade": {
+		"cOD": 1,
+		"ft": 512,
+		"oA": 1,
+		"oAP": "\/src\/views\/pendingProposal.html",
 		"oF": 0,
 		"oS": 0
 		},
@@ -277,6 +318,7 @@
 		},
 	"\/truffle.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 1,
 		"oA": 1,
 		"oAP": "\/truffle-min.js",
@@ -698,6 +740,10 @@
 			"active": 0,
 			"optionString": "{'setWithoutGet': true, 'getWithoutSet': false}"
 			},
+		"array-bracket-newline": {
+			"active": 0,
+			"optionString": "{'multiline': true, 'minItems': null}"
+			},
 		"array-bracket-spacing": {
 			"active": 0,
 			"optionString": "'never', {'singleValue': false, 'objectsInArrays': false, 'arraysInArrays': false}"
@@ -705,6 +751,10 @@
 		"array-callback-return": {
 			"active": 0,
 			"optionString": ""
+			},
+		"array-element-newline": {
+			"active": 0,
+			"optionString": "'always'"
 			},
 		"arrow-body-style": {
 			"active": 0,
@@ -802,6 +852,10 @@
 			"active": 0,
 			"optionString": "'always', {'null': 'always'}"
 			},
+		"for-direction": {
+			"active": 0,
+			"optionString": ""
+			},
 		"func-call-spacing": {
 			"active": 0,
 			"optionString": "'never'"
@@ -821,6 +875,10 @@
 		"generator-star-spacing": {
 			"active": 0,
 			"optionString": "{'before': true, 'after': false}"
+			},
+		"getter-return": {
+			"active": 0,
+			"optionString": "{'allowImplicit': false}"
 			},
 		"global-require": {
 			"active": 0,
@@ -949,6 +1007,10 @@
 		"no-bitwise": {
 			"active": 0,
 			"optionString": "{'allow': ['~'], 'int32Hint': true}"
+			},
+		"no-buffer-constructor": {
+			"active": 0,
+			"optionString": ""
 			},
 		"no-caller": {
 			"active": 0,
@@ -1494,6 +1556,10 @@
 			"active": 0,
 			"optionString": "{'blocks': 'always', 'switches': 'always', 'classes': 'always'}"
 			},
+		"padding-line-between-statements": {
+			"active": 0,
+			"optionString": "{blankLine: 'always', prev:'*', next:'return'}"
+			},
 		"prefer-arrow-callback": {
 			"active": 0,
 			"optionString": ""
@@ -1562,6 +1628,10 @@
 			"active": 0,
 			"optionString": "{'before': false, 'after': true}"
 			},
+		"semi-style": {
+			"active": 0,
+			"optionString": "'last'"
+			},
 		"sort-imports": {
 			"active": 0,
 			"optionString": "{'ignoreCase': false, 'ignoreMemberSort': true, 'memberSyntaxSortOrder': ['none', 'all', 'multiple', 'single']}"
@@ -1601,6 +1671,10 @@
 		"strict": {
 			"active": 0,
 			"optionString": "'safe'"
+			},
+		"switch-colon-spacing": {
+			"active": 0,
+			"optionString": "{'after': true, 'before': false}"
 			},
 		"symbol-description": {
 			"active": 0,
@@ -2234,6 +2308,7 @@
 	"previewPathAddition": "",
 	"skippedFoldersString": "log, _logs, logs, _cache, cache, \/storage\/framework\/sessions, node_modules",
 	"sourceFolderName": "source",
+	"susyVersion": 3,
 	"uglifyDefinesString": "",
 	"uglifyFlags2": {
 		"ascii-only": {

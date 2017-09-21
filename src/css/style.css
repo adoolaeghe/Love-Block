@@ -49,6 +49,10 @@ h1 {
   height: 300px;
 }
 
+.container-marriage-id{
+  background-color: lightpink
+}
+
 p {
   color: white;
   font-family: 'Catamaran', sans-serif;
@@ -63,10 +67,13 @@ p {
 }
 
 .container-cancelled,
-.container-pending,
+.container-pending-proposal,
 .container-form,
 .container-confirmation,
+.container-pending-marriage,
+.container-complete-marriage,
 .container-propose,
+.container-certificate,
 .container-congratulations {
 display: none;
 }
