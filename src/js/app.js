@@ -114,11 +114,11 @@ App = {
           var senderAccountId = accounts[0];
           console.log(senderAccountId);
 
-          var firstName = data[2].value;
-          var middleName = data[3].value;
-          var lastName = data[4].value;
-          var dateOfBirth = data[5].value;
-          var id = data[6].value;
+          var firstName = data[1].value;
+          var middleName = data[2].value;
+          var lastName = data[3].value;
+          var dateOfBirth = data[4].value;
+          var id = data[5].value;
 
         App.contracts.Marriages.deployed().then(function(instance) {
           marriageInstance = instance;
