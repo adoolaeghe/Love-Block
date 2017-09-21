@@ -199,61 +199,43 @@
       "address": "0xbffdae21fb3041f44e07c4e43afe7124ca43b840",
       "updated_at": 1505987846516
     },
-    "1505990289396": {
+    "1505991956999": {
       "events": {},
       "links": {},
-      "address": "0xf922e56a4c24395fe8eb63ecbc34ac9fdf0b7c19",
-      "updated_at": 1505990296729
+      "address": "0xe37ac4f7b0d0621fa5df5105ad2d79159b78e538",
+      "updated_at": 1505992018197
     },
-    "1505990990479": {
+    "1505992902246": {
       "events": {},
       "links": {},
-      "address": "0x68108367c88b4e0ace5f060bc0f76dc5647b93ad",
-      "updated_at": 1505991011969
+      "address": "0x2a6fb539bf8c406a10d31ac81276e1750d0d52ce",
+      "updated_at": 1505993485866
     },
-    "1505991315844": {
+    "1505993689114": {
       "events": {},
       "links": {},
-      "address": "0xb3da60d44e137c990a6ee63b77b08ccdf2c2ade1",
-      "updated_at": 1505991330904
+      "address": "0xa6e82b591431e5b6ca6a1aada27a28a93a7c50c5",
+      "updated_at": 1505993700176
     },
-    "1505992255296": {
+    "1505994966478": {
       "events": {},
       "links": {},
-      "address": "0x773273a29779219772095fb07ad09f453bfbf76e",
-      "updated_at": 1505992270956
+      "address": "0x42ad9524efbe9bd23351d928961289425e44fa71",
+      "updated_at": 1505994991775
     },
-    "1505992337951": {
+    "1505995329358": {
       "events": {},
       "links": {},
-      "address": "0xf23b92c4130ab7a0aa86916a5c9a4525c6b6b04a",
-      "updated_at": 1505992352021
+      "address": "0xb9faa5a0669ccb5676a670e4a1525d2390cae491",
+      "updated_at": 1505995387170
     },
-    "1505993397429": {
+    "1505996366099": {
       "events": {},
       "links": {},
-      "address": "0xdae81b8e3d7cf94af9c15886e7cd0dbe452320ed",
-      "updated_at": 1505993411691
-    },
-    "1505993725087": {
-      "events": {},
-      "links": {},
-      "address": "0xfc6df1a38699d10cc39a8af4d81153a3b917ecdc",
-      "updated_at": 1505993749102
-    },
-    "1505994592592": {
-      "events": {},
-      "links": {},
-      "address": "0x03be520b2745e9f509b01c2ba01fc264c3459215",
-      "updated_at": 1505994610520
-    },
-    "1505994962983": {
-      "events": {},
-      "links": {},
-      "address": "0x9632171c027f122b8eac29a76acfd49e9680d0b1",
-      "updated_at": 1505994980544
+      "address": "0xdd5354eb9b58872ae5af3228de5916bc97c910cf",
+      "updated_at": 1505996467576
     }
   },
   "schema_version": "0.0.5",
-  "updated_at": 1505994980544
+  "updated_at": 1505996467576
 }
