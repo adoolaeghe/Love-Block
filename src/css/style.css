@@ -45,6 +45,10 @@ h1 {
   justify-content: center;
 }
 
+.question-header {
+  height: 300px;
+}
+
 p {
   color: white;
   font-family: 'Catamaran', sans-serif;
@@ -162,6 +166,10 @@ img.button-image {
   width: 100%
 }
 
+img.image-finger {
+  height: 100px
+}
+
 img.button-image:hover {
   background: url('./assets/button.png');
 }
@@ -193,4 +201,41 @@ form.form{
   font-size: 30px;
   letter-spacing: 1px;
   font-weight: 200;
+}
+
+.confirmYesButton, .confirmNoButton {
+  color: white;
+  font-family: 'Catamaran', sans-serif;
+  height: 60px;
+  width: 300px;
+  padding: 10 0 10 0;
+  border: 1px white solid;
+  border-radius: 100px;
+  letter-spacing: 2px;
+  font-size: 20px;
+  margin: 20px;
+}
+
+.confirmYesButton {
+  background-color: #33c0d4;
+}
+
+.confirmNoButton {
+  background-color: #eb347b;
+}
+
+.button-confirmation {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin-right: 20px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-form {
+  width: 300px
 }
