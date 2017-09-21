@@ -5,8 +5,12 @@ LoveBloc is a decentralised application that uses blockchain and smart contract 
 A blockchain is a distributed database that is shared between a network of computers or nodes. It is a digital ledger of transactions that are publicly accessible and incorruptible.
 ###### What is a smart contract?
 A smart contract is computer code which can facilitate, execute and enforce an agreement using blockchain technology. It allows two parties to do business with one another without the need of a middleman. It is a set of instructions that are executed under specific circumstances.
+The smart contract code is encrypted and sent out to nodes via the distributed network. These work to execute the code with each transaction being recorded in a new block on the chain, along with any data associated with it.
+###### Why blockchain marriage?
+There are sadly still many places in the world where certain groups cannot demonstrate their love and commitment through a legal marriage contract. Our app allows anyone to create a marriage with their partner in any location(as long as there is internet!) and without any state interference. It is inclusive and meaningful due to the unchangeable and lasting qualities of blockchain records.
 
-The smart contract code is encrypted and sent out to nodes via the distributed network. These work to execute the code with each transaction being recorded in a new block on the chain. Our app works by recording a marriage transaction on the blockchain when there is a matching proposal made by two users.
+It works by recording a marriage transaction when there is a matching proposal made by two parties.
+We hope to implement functionality to allow polyamorous relationships to be included.
 
 ## Team
 This app was developed over a 9 day period as a final project at Makers Academy, a software development bootcamp. The team consisted of the following lovely people:
@@ -46,9 +50,11 @@ testrpc
 8. In your original terminal window run:
 ```
 truffle compile
-truffle migratenpm run development
+truffle migrate
+npm run dev
 ```
 9. The app will be launched at localhost:3000.
+
 ![alt tag](https://user-images.githubusercontent.com/26767598/30692409-4eea4798-9ec3-11e7-93cd-0733d5584cd8.png)
 
 
