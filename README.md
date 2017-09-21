@@ -72,12 +72,12 @@ So that I can demonstrate my commitment to another user,
 I would like to be able to create a request for their hand in marriage.
 
 As a user,
-So that I can celebrate the marriage with the blockchain community,
-I would like to see a confirmation of my marriage.
+So that I can consider whether I am sure that I wish to go ahead,
+I would like to be able to choose between yes and no.
 
 As a user,
-So that I choose between two options,
-I would like to be able to choose between yes and no.
+So that I can celebrate the marriage with the blockchain community,
+I would like to see a confirmation of my marriage.
 
 As a user,
 So that I can show evidence of my marriage,
@@ -103,9 +103,9 @@ I would like to receive a certificate once my marriage has been confirmed.
 A set of values agreed upon by the whole team on the first day of the project.
 
 * Simplicity
-* Stand ups daily 10am
+* Stand ups daily at 10am
 * Retro Daily at 5pm
-* Have fun
+* Have fun!
 * Consider everyone's views and opinions
 * Open communication and honesty
 * Respect that everyone has a life outside of the project
