@@ -1,6 +1,20 @@
-# Love Block Project
+# Love Bloc
 
-## How to use
+LoveBloc is a decentralised application that uses blockchain and smart contract technology to allow users of any belief, gender and sexual orientation to form a marriage that is immutable and everlasting.
+###### What is blockchain?
+A blockchain is a distributed database that is shared between a network of computers or nodes. It is a digital ledger of transactions that are publicly accessible and incorruptible.
+###### What is a smart contract?
+A smart contract is computer code which can facilitate, execute and enforce an agreement using blockchain technology. It allows two parties to do business with one another without the need of a middleman. It is a set of instructions that are executed under specific circumstances.
+
+The smart contract code is encrypted and sent out to nodes via the distributed network. These work to execute the code with each transaction being recorded in a new block on the chain. Our app works by recording a marriage transaction on the blockchain when there is a matching proposal made by two users.
+
+## Team
+This app was developed over a 9 day period as a final project at Makers Academy, a software development bootcamp. The team consisted of the following lovely people:
+
+[Kathryn Downes](https://github.com/kitkat119), [Antoine Doolaeghe](https://github.com/adoolaeghe), [Funmi Adewodu](https://github.com/funmia), [Oleg Lukyanov](https://github.com/oleglukyanov)
+
+
+## How to run
 1. Install Node.js.
 
 2. Clone the repo to your computer.
@@ -35,6 +49,8 @@ truffle compile
 truffle migratenpm run development
 ```
 9. The app will be launched at localhost:3000.
+![alt tag](https://user-images.githubusercontent.com/26767598/30692409-4eea4798-9ec3-11e7-93cd-0733d5584cd8.png)
+
 
 
 ## To run the tests:
@@ -64,14 +80,21 @@ I would like to receive a certificate once my marriage has been confirmed.
 
 ## Tech Stack
 
-Ethereum/Testrpc
-Truffle
-Solidity
-Javascript
-Jade
-Web3.js
+:computer: Ethereum/Testrpc
+
+:computer: Truffle
+
+:computer: Solidity
+
+:computer: Javascript
+
+:computer: Jade
+
+:computer: Web3.js
 
 ## Team charter
+
+A set of values agreed upon by the whole team on the first day of the project.
 
 * Simplicity
 * Stand ups daily 10am
