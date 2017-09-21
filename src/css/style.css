@@ -78,7 +78,7 @@ p {
 display: none;
 }
 
-button.getMarriedButton {
+button.getMarriedButton, .personalDetailsButton {
   background-color: white;
   color: #8924F9;
   font-family: 'Catamaran', sans-serif;
@@ -95,7 +95,14 @@ button.getMarriedButton {
   font-size: 20px;
 }
 
-button.getMarriedButton:hover{
+.personalDetailsButton {
+  height: 40px;
+  margin: 0px;
+}
+
+button:focus {outline:0;}
+
+button.getMarriedButton:hover, .personalDetailsButton:hover {
   -webkit-animation: colorchange 10s infinite;
   color: white;
 }
@@ -177,9 +184,6 @@ img.image-finger {
   height: 100px
 }
 
-img.button-image:hover {
-  background: url('./assets/button.png');
-}
 
 form.form{
   display: flex;
@@ -238,11 +242,66 @@ form.form{
   margin-right: 20px;
 }
 
-.form1 {
+form.form1 {
+  margin-top: 200px;
   display: flex;
+  justify-content: center;
+  text-align: center;
   flex-direction: column;
 }
 
 .input-form {
   width: 300px
+}
+
+label {
+  font-size: 20px;
+}
+
+.loader1{
+	position: relative;
+	height: 80px;
+	width: 80px;
+	border-radius: 80px;
+	border: 3px solid  rgba(255,255,255, .7);
+
+	top: 28%;
+	top: -webkit-calc(50% - 43px);
+	top: calc(50% - 43px);
+	left: 35%;
+	left: -webkit-calc(50% - 43px);
+	left: calc(50% - 43px);
+
+	-webkit-transform-origin: 50% 50%;
+			transform-origin: 50% 50%;
+	-webkit-animation: loader1 3s linear infinite;
+			animation: loader1 3s linear infinite;
+}
+
+.loader1:after{
+	content: "";
+	position: absolute;
+	top: -5px;
+	left: 20px;
+	width: 11px;
+	height: 11px;
+	border-radius: 10px;
+	background-color: #fff;
+}
+
+@-webkit-keyframes loader1{
+    0%{-webkit-transform:rotate(0deg);}
+    100%{-webkit-transform:rotate(360deg);}
+}
+
+@keyframes loader1{
+    0%{transform:rotate(0deg);}
+    100%{transform:rotate(360deg);}
+}
+
+.pendingProposal {
+  color: white;
+  font-size: 30px;
+  font-family: 'Catamaran', sans-serif;
+  height: 500px
 }
