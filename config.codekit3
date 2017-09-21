@@ -35,22 +35,6 @@
 		"oO": 0,
 		"oS": 1
 		},
-	"\/build\/contracts\/Marriages.json": {
-		"ft": 524288,
-		"oA": 1,
-		"oAP": "\/build\/contracts\/Marriages-min.json",
-		"oF": 0,
-		"oO": 0,
-		"oS": 1
-		},
-	"\/build\/contracts\/Migrations.json": {
-		"ft": 524288,
-		"oA": 1,
-		"oAP": "\/build\/contracts\/Migrations-min.json",
-		"oF": 0,
-		"oO": 0,
-		"oS": 1
-		},
 	"\/contracts\/Marriages.sol": {
 		"ft": 8192,
 		"oA": 1,

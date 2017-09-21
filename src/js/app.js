@@ -44,11 +44,11 @@ App = {
         var senderAccountId = accounts[0];
         console.log(senderAccountId);
 
-      App.contracts.Marriages.deployed().then(function(instance) {
-        marriageInstance = instance;
-        console.log("1");
-        return marriageInstance.proposalNew(senderAccountId, receiverAccountId);
-        console.log("2");
+        App.contracts.Marriages.deployed().then(function(instance) {
+          marriageInstance = instance;
+          console.log("1");
+          return marriageInstance.proposalNew(senderAccountId, receiverAccountId);
+          console.log("2");
         }).then(function(result) {
           console.log("3");
           setTimeout(function() { App.checkForMatchingProposal(senderAccountId, receiverAccountId);}, 3000);
@@ -102,41 +102,39 @@ App = {
   },
 
   handleGetPersonDetails() {
-      $('.personalDetailsButton').click(function(event){
-        event.preventDefault();
-        var data = $('form').serializeArray();
-        console.log(data);
+    $('.personalDetailsButton').click(function(event){
+      event.preventDefault();
+      var data = $('form').serializeArray();
+      console.log(data);
 
-        web3.eth.getAccounts(function(error, accounts) {
-          if (error) {
-            console.log(error);
-          }
-          var senderAccountId = accounts[0];
-          console.log(senderAccountId);
+      web3.eth.getAccounts(function(error, accounts) {
+        if (error) {
+          console.log(error);
+        }
+        var senderAccountId = accounts[0];
+        console.log(senderAccountId);
 
-          var firstName = data[1].value;
-          var middleName = data[2].value;
-          var lastName = data[3].value;
-          var dateOfBirth = data[4].value;
-          var id = data[5].value;
+        var firstName = data[1].value;
+        var middleName = data[2].value;
+        var lastName = data[3].value;
+        var dateOfBirth = data[4].value;
+        var id = data[5].value;
 
         App.contracts.Marriages.deployed().then(function(instance) {
           marriageInstance = instance;
           console.log(senderAccountId);
 
           return marriageInstance.marriageGetMarIdForPerson.call(senderAccountId);
-          }).then(function(marId){
-            console.log("8");
-            console.log(marId);
-            // var updatePage = $(".container-marriage-id");
-            // updatePage.append(marId);
-            App.handleAddPersonToMarriage(marId, senderAccountId, firstName, middleName, lastName, dateOfBirth, id);
-          }).catch(function(err) {
-            console.log(err.message);
-          });
+        }).then(function(marId){
+          console.log("8");
+          console.log(marId);
+          App.handleAddPersonToMarriage(marId, senderAccountId, firstName, middleName, lastName, dateOfBirth, id);
+        }).catch(function(err) {
+          console.log(err.message);
         });
       });
-    },
+    });
+  },
 
   handleAddPersonToMarriage(marId, _address, firstName, middleName, lastName, dateOfBirth, id) {
     App.contracts.Marriages.deployed().then(function(instance) {
@@ -168,6 +166,7 @@ App = {
           if(isComplete) {
             $('.container-complete-marriage').show();
             console.log('Completion confirmed.');
+            App.renderCertificate(marId);
             clearInterval(timerId);
           }
         });
@@ -196,50 +195,63 @@ App = {
     var person1DateOfBirth;
     var person1Id;
 
-   // Define person2 data
+    // Define person2 data
     var person2FirstName;
     var person2MiddleName;
     var person2LastName;
     var person2DateOfBirth;
     var person2Id;
 
-   // Load data from blockchain
+    // Load data from blockchain
     App.contracts.Marriages.deployed().then(function(marriages) {
-        // Person 1
+      var printedCertificate = $(".printed-certificate");
+      // Person 1
       marriages.marriageGetPersonFirstName.call(marId, 0).then(function(result) {
         person1FirstName = result;
+        console.log("found " + web3.toAscii(person1FirstName));
+        printedCertificate.append(web3.toAscii(person1FirstName));
       });
       marriages.marriageGetPersonMiddleName.call(marId, 0).then(function(result) {
         person1MiddleName = result;
+        printedCertificate.append(web3.toAscii(person1MiddleName));
       });
       marriages.marriageGetPersonLastName.call(marId, 0).then(function(result) {
         person1LastName = result;
+        printedCertificate.append(web3.toAscii(person1LastName));
       });
       marriages.marriageGetPersonDateOfBirth.call(marId, 0).then(function(result) {
         person1DateOfBirth = result;
+        printedCertificate.append(person1DateOfBirth);
       });
       marriages.marriageGetPersonId.call(marId, 0).then(function(result) {
         person1Id = result;
+        printedCertificate.append(person1Id);
       });
 
-     // Person 2
+      // Person 2
       marriages.marriageGetPersonFirstName.call(marId, 1).then(function(result) {
         person2FirstName = result;
+        printedCertificate.append(web3.toAscii(person2FirstName));
       });
       marriages.marriageGetPersonMiddleName.call(marId, 1).then(function(result) {
         person2MiddleName = result;
+        printedCertificate.append(web3.toAscii(person2MiddleName));
       });
       marriages.marriageGetPersonLastName.call(marId, 1).then(function(result) {
         person2LastName = result;
+        printedCertificate.append(web3.toAscii(person2LastName));
       });
       marriages.marriageGetPersonDateOfBirth.call(marId, 1).then(function(result) {
         person2DateOfBirth = result;
+        printedCertificate.append(person2DateOfBirth);
       });
       marriages.marriageGetPersonId.call(marId, 1).then(function(result) {
         person2Id = result;
+        printedCertificate.append(person2Id);
       });
     });
-     // Show/hide the relevant views and render the data obtained above
+    // Show/hide the relevant views and render the data obtained above
+
   },
 
   handleCertificate: function(){
@@ -249,6 +261,26 @@ App = {
       $('.container-complete-marriage').hide();
       $('.container-certificate').show();
     });
+    // web3.eth.getAccounts(function(error, accounts) {
+    //   if (error) {
+    //     console.log(error);
+    //   }
+
+    //   var senderAccountId = accounts[0];
+    //   console.log(senderAccountId);
+    //
+    //   App.contracts.Marriages.deployed().then(function(instance) {
+    //     marriageInstance = instance;
+    //     console.log(senderAccountId);
+    //     return marriageInstance.marriageGetMarIdForPerson.call(senderAccountId);
+    //   }).then(function(marId){
+    //     console.log("9");
+    //     console.log(marId);
+    //     App.renderCertificate(marId);
+    //   }).catch(function(err) {
+    //     console.log(err.message);
+    //   });
+    // });
   }
 };
 

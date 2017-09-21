@@ -242,6 +242,13 @@ form.form{
   margin-right: 20px;
 }
 
+.printed-certificate {
+  color: white;
+  display: flex;
+  flex-direction: row;
+}
+
+.form1 {
 form.form1 {
   margin-top: 200px;
   display: flex;
