@@ -3,9 +3,12 @@
 LoveBloc is a decentralised application that uses blockchain and smart contract technology to allow users of any belief, gender and sexual orientation to form a marriage that is immutable and everlasting.
 ###### What is blockchain?
 A blockchain is a distributed database that is shared between a network of computers or nodes. It is a digital ledger of transactions that are publicly accessible and incorruptible.
+
+Ethereum is a blockchain-based distributed computing platform, which focuses on smart contracts.
 ###### What is a smart contract?
 A smart contract is computer code which can facilitate, execute and enforce an agreement using blockchain technology. It allows two parties to do business with one another without the need of a middleman. It is a set of instructions that are executed under specific circumstances.
-The smart contract code is encrypted and sent out to nodes via the distributed network. These work to execute the code with each transaction being recorded in a new block on the chain, along with any data associated with it.
+
+The smart contract code is encrypted and sent out to nodes via the distributed network. These work to execute the code, with each transaction being recorded in a new block on the chain, along with any data associated with it. 
 ###### Why blockchain marriage?
 There are sadly still many places in the world where certain groups cannot demonstrate their love and commitment through a legal marriage contract. Our app allows anyone to create a marriage with their partner in any location(as long as there is internet!) and without any state interference. It is inclusive and meaningful due to the unchangeable and lasting qualities of blockchain records.
 
