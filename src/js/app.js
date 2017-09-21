@@ -128,8 +128,6 @@ App = {
         }).then(function(marId){
           console.log("8");
           console.log(marId);
-          // var updatePage = $(".container-marriage-id");
-          // updatePage.append(marId);
           App.handleAddPersonToMarriage(marId, senderAccountId, firstName, middleName, lastName, dateOfBirth, id);
         }).catch(function(err) {
           console.log(err.message);
@@ -168,7 +166,7 @@ App = {
           if(isComplete) {
             $('.container-complete-marriage').show();
             console.log('Completion confirmed.');
-            App.handleCertificate();
+            App.renderCertificate(marId);
             clearInterval(timerId);
           }
         });
@@ -223,30 +221,36 @@ App = {
       });
       marriages.marriageGetPersonDateOfBirth.call(marId, 0).then(function(result) {
         person1DateOfBirth = result;
+        printedCertificate.append(person1DateOfBirth);
       });
       marriages.marriageGetPersonId.call(marId, 0).then(function(result) {
         person1Id = result;
+        printedCertificate.append(person1Id);
       });
 
       // Person 2
       marriages.marriageGetPersonFirstName.call(marId, 1).then(function(result) {
         person2FirstName = result;
+        printedCertificate.append(web3.toAscii(person2FirstName));
       });
       marriages.marriageGetPersonMiddleName.call(marId, 1).then(function(result) {
         person2MiddleName = result;
+        printedCertificate.append(web3.toAscii(person2MiddleName));
       });
       marriages.marriageGetPersonLastName.call(marId, 1).then(function(result) {
         person2LastName = result;
+        printedCertificate.append(web3.toAscii(person2LastName));
       });
       marriages.marriageGetPersonDateOfBirth.call(marId, 1).then(function(result) {
         person2DateOfBirth = result;
+        printedCertificate.append(person2DateOfBirth);
       });
       marriages.marriageGetPersonId.call(marId, 1).then(function(result) {
         person2Id = result;
+        printedCertificate.append(person2Id);
       });
     });
     // Show/hide the relevant views and render the data obtained above
-
 
   },
 
@@ -257,26 +261,26 @@ App = {
       $('.container-complete-marriage').hide();
       $('.container-certificate').show();
     });
-    web3.eth.getAccounts(function(error, accounts) {
-      if (error) {
-        console.log(error);
-      }
+    // web3.eth.getAccounts(function(error, accounts) {
+    //   if (error) {
+    //     console.log(error);
+    //   }
 
-      var senderAccountId = accounts[0];
-      console.log(senderAccountId);
-
-      App.contracts.Marriages.deployed().then(function(instance) {
-        marriageInstance = instance;
-        console.log(senderAccountId);
-        return marriageInstance.marriageGetMarIdForPerson.call(senderAccountId);
-      }).then(function(marId){
-        console.log("9");
-        console.log(marId);
-        App.renderCertificate(marId);
-      }).catch(function(err) {
-        console.log(err.message);
-      });
-    });
+    //   var senderAccountId = accounts[0];
+    //   console.log(senderAccountId);
+    //
+    //   App.contracts.Marriages.deployed().then(function(instance) {
+    //     marriageInstance = instance;
+    //     console.log(senderAccountId);
+    //     return marriageInstance.marriageGetMarIdForPerson.call(senderAccountId);
+    //   }).then(function(marId){
+    //     console.log("9");
+    //     console.log(marId);
+    //     App.renderCertificate(marId);
+    //   }).catch(function(err) {
+    //     console.log(err.message);
+    //   });
+    // });
   }
 };
 
