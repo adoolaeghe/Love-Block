@@ -1,29 +1,43 @@
 # Love Block Project
 
-Marriage is an outdated institution....but not any more!!!
-Do you want to get chained today?
-
-I do.
-
 ## How to use
-First install:
-Node.js
-Metamask (https://metamask.io/)
+1. Install Node.js.
 
-Once testrpc is installed, it should be run in a separate terminal window. It will print out 10 pre-funded accounts with a 12 word mnemonic that will allow you to regenerate these.
-
+2. Clone the repo to your computer.
 ```
 git clone https://github.com/adoolaeghe/Love-Block
 cd Love-Block
-npm install -g ethereumjs-testrpc
-npm install -g truffle
-testrpc # in a separate terminal window
-testrpc -m "testrpc mneumonic"
-truffle migrate
-...
 ```
 
-To run the tests:
+3. Install truffle testing framework and testrpc, a Node.js based Ethereum client used for development.
+```
+npm install -g ethereumjs-testrpc
+npm install -g truffle
+```
+
+4. Install the node dependencies.
+```
+npm install
+```
+
+5. Install Metamask chrome plugin at https://metamask.io/.
+
+6. Run testrpc in a separate terminal window. This will print out 10 pre-funded accounts along with a 12 word mneumonic which will allow you to regenerate these.
+```
+testrpc
+```
+
+7. Open a Metamask account using the 12 word mneumonic. Your account will contain 100 ETH.
+
+8. In your original terminal window run:
+```
+truffle compile
+truffle migratenpm run development
+```
+9. The app will be launched at localhost:3000.
+
+
+## To run the tests:
 ```
 truffle test
 ```
