@@ -52,33 +52,33 @@ contract Marriages {
     return marriages[marId].people[index]._address;
   }
 
-  function marriageGetMarIdForPerson(address person) public returns (bytes32) {
+  function marriageReturnMarIdForPerson(address person) public returns (bytes32) {
     return marriageRecords[person];
   }
 
   /* Marriage certificate methods */
 
-  function marriageGetPersonFirstName(bytes32 marId, uint256 index) public returns (bytes32) {
+  function marriageReturnPersonFirstName(bytes32 marId, uint256 index) public returns (bytes32) {
     require (marriageIsComplete(marId));
     return marriages[marId].people[index].firstName;
   }
 
-  function marriageGetPersonMiddleName(bytes32 marId, uint256 index) public returns (bytes32) {
+  function marriageReturnPersonMiddleName(bytes32 marId, uint256 index) public returns (bytes32) {
     require (marriageIsComplete(marId));
     return marriages[marId].people[index].middleName;
   }
 
-  function marriageGetPersonLastName(bytes32 marId, uint256 index) public returns (bytes32) {
+  function marriageReturnPersonLastName(bytes32 marId, uint256 index) public returns (bytes32) {
     require (marriageIsComplete(marId));
     return marriages[marId].people[index].lastName;
   }
 
-  function marriageGetPersonDateOfBirth(bytes32 marId, uint256 index) public returns (bytes32) {
+  function marriageReturnPersonDateOfBirth(bytes32 marId, uint256 index) public returns (bytes32) {
     require (marriageIsComplete(marId));
     return marriages[marId].people[index].dateOfBirth;
   }
 
-  function marriageGetPersonId(bytes32 marId, uint256 index) public returns (uint) {
+  function marriageReturnPersonId(bytes32 marId, uint256 index) public returns (uint) {
     require (marriageIsComplete(marId));
     return marriages[marId].people[index].id;
   }
@@ -120,7 +120,7 @@ contract Marriages {
   }
 
   function _personIsMarried(address person) private returns(bool) {
-    return marriageIsComplete(marriageGetMarIdForPerson(person));
+    return marriageIsComplete(marriageReturnMarIdForPerson(person));
   }
 
   function _setTimeStamp(bytes32 marId) private returns(uint256) {
