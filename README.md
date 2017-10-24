@@ -1,6 +1,13 @@
 # Love Bloc
 
-LoveBloc is a decentralised application that uses blockchain and smart contract technology to allow users of any belief, gender and sexual orientation to form a marriage that is immutable and everlasting.
+<p align="center">
+  <img src="https://media.giphy.com/media/l378xsJp3Yw4zYiJ2/giphy.gif" />
+</p>
+
+
+LoveBloc is a decentralised application that uses blockchain and smart contract technology to allow users of any belief, gender and sexual orientation to form a marriage that is immutable and everlasting
+
+
 ###### What is blockchain?
 A blockchain is a distributed database that is shared between a network of computers or nodes. It is a digital ledger of transactions that are publicly accessible and incorruptible.
 
@@ -57,9 +64,6 @@ truffle migrate
 npm run dev
 ```
 9. The app will be launched at localhost:3000.
-
-![alt tag](https://user-images.githubusercontent.com/26767598/30692409-4eea4798-9ec3-11e7-93cd-0733d5584cd8.png)
-
 
 
 ## To run the tests:
